@@ -1,0 +1,231 @@
+.ptp-pricing-table{
+  white-space: nowrap;
+  width: 100%;
+}
+
+.ptp-pricing-table ul li{
+list-style: none;
+
+/* reset for webkit bug:  
+  http://christian-fei.com/tutorials/get-rid-of-the-annoying-40px-left-margin-on-unordered-list-in-webkit/*/
+  margin-left: 0;
+}
+
+.ptp-col {
+  /*padding-left: 0.9375em;
+  padding-right: 0.9375em;*/
+
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+
+  display: inline-block;
+  vertical-align: top;
+
+  white-space: normal;
+
+}
+
+.one-col {
+  width: 90%;
+}
+
+.two-col {
+  width: 45%;
+}
+
+.three-col {
+    width: 30%;
+}
+
+.four-col {
+  width: 23%;
+}
+
+.five-col {
+  width: 18%;
+}
+
+.six-col {
+  width: 15%;
+}
+
+.more-col {
+  width: auto;
+}
+
+.ptp-col ul{
+  border: solid 1px #dddddd;
+
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 1.25em;
+
+  font-size: 1em;
+  line-height: 1.6;
+  font-family: inherit;
+
+}
+
+.ptp-plan{
+  background-color: #dddddd;
+  padding: 0.9375em 1.25em;
+  text-align: center;
+  color: #333333;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.ptp-description{
+  background-color: white;
+  padding: 0.9375em;
+  text-align: center;
+  color: #777777;
+  font-size: 0.75em;
+  font-weight: normal;
+  line-height: 1.4;
+  border-bottom: dotted 1px #dddddd;
+}
+
+.ptp-price{
+  background-color: #eeeeee;
+  padding: 0.9375em 1.25em;
+  text-align: center;
+  color: #333333;
+  font-weight: normal;
+  font-size: 1.25em;
+}
+
+.ptp-bullet-item{
+  background-color: white;
+  padding: 0.9375em;
+  text-align: center;
+  color: #333333!important;
+  font-size: 0.875em;
+  font-weight: normal;
+  border-bottom: dotted 1px #dddddd;
+}
+
+.ptp-cta{
+  background-color: #F5F5F5;
+  text-align: center;
+  padding-top: 1.25em;
+  /*padding: 1.25em 1.25em 0;*/
+}
+
+.ptp-button{
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 1.3;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  
+  display: inline-block;
+  width: 50%;
+
+  margin: 0 0 1.25em;
+  padding-top: 0.75em;
+  padding-right: 1.5em;
+  padding-bottom: 0.8125em;
+  padding-left: 1.5em;
+  
+  font-size: 1em;
+
+  background-color: #2ba6cb;
+  border-color: #2284a1;
+  color: white!important;
+}
+
+ /* Highlighting for most popular column */
+.ptp-col.ptp-highlight{
+  margin-top: -1.4em;
+}
+
+.ptp-col.one-col.ptp-highlight{
+
+}
+
+.ptp-col.two-col.ptp-highlight{
+  width: 48%;
+}
+
+.ptp-col.three-col.ptp-highlight{
+  width: 33%;
+}
+
+.ptp-col.four-col.ptp-highlight{
+  width: 26%;
+}
+
+.ptp-col.five-col.ptp-highlight{
+  width: 21%;
+}
+
+.ptp-col.six-col.ptp-highlight{
+  width: 18%;
+}
+
+.ptp-col.more-col.ptp-highlight{
+  width: auto;
+}
+
+.ptp-col.ptp-highlight ul{
+  /*border-color:#AAAAAA;*/
+}
+
+.ptp-plan.ptp-highlight{
+  /*background-color: #AAAAAA;*/
+  /*height: 20%;*/
+
+}
+
+/*
+.ptp-price.ptp-highlight{
+  background-color: #D6D6D6;
+}
+
+.ptp-bullet-item.ptp-highlight{
+border-color: #AAAAAA;
+}
+
+.ptp-cta.ptp-highlight{
+  background-color: #DDDDDD;
+}*/
+
+.ptp-button.ptp-highlight{
+  /*background-color: #CB7B2B;
+  border-color: #C25905;*/
+}
+
+/* media query
+1) make button font smaller
+2) make plan-name font smaller
+ */
+
+
+@media only screen and (max-width: 768px) {
+  .ptp-button{
+    font-weight: normal;
+    font-size: 0.9em;
+    padding-left: 1em;
+  }
+
+  .ptp-plan{
+    font-size: 0.9em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ptp-button{
+    font-size: 0.875em;
+    padding-left: 0.8em;
+
+  }
+
+  .ptp-plan{
+    font-size: 0.875em;
+  }
+}

@@ -1,0 +1,55 @@
+<div class="column two">
+	<!--<li class="dragme">Drag me</li>-->
+	<div class="ptp-title plan-title">
+    	<?php
+			$mb->the_field('c1-plan-name');
+
+			if(is_null($mb->get_the_value()))
+				$mb->meta[$mb->name] = 'Solopreneur';
+		?>
+        <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" class="form-control" placeholder="e.g. Solopreneur">
+        <button class="button button-small ptp-icon-trash" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Delete Column&lt;/strong&gt;" data-content="
+        Click this button to delete this column."></button>
+    </div>
+    <ul class="ptp-settings plan-settings">
+        <li>
+        	<?php
+				$mb->the_field('c1-plan-price');
+
+				if(is_null($mb->get_the_value()))
+					$mb->meta[$mb->name] = '$49/mo';
+			?>
+            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" placeholder="e.g. $49/mo" class="form-control">
+        </li>
+        <li class="features">
+        	<?php
+				$mb->the_field('c1-plan-features');
+
+				if(is_null($mb->get_the_value()))
+					$mb->meta[$mb->name] = '1 Website
+30,000 Monthly Visits
+Unlimited Data Transfer
+5 GB Storage';
+			?>
+            <textarea name="<?php $mb->the_name(); ?>" class="form-control" rows="7"><?php $mb->the_value(); ?></textarea>
+        </li>
+        <li>
+        	<?php
+				$mb->the_field('c1-button-text');
+
+				if(is_null($mb->get_the_value()))
+					$mb->meta[$mb->name] = 'Start Free Trial';
+			?>
+            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" placeholder="e.g. Start A Free Trial" class="form-control">
+        </li>
+        <li>
+        	<?php
+				$mb->the_field('c1-button-url');
+
+				if(is_null($mb->get_the_value()))
+					$mb->meta[$mb->name] = '/signup-solopreneur';
+			?>
+            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php $mb->the_value(); ?>" placeholder="e.g. /signup-personal" class="form-control">
+        </li>
+	</ul>
+</div>

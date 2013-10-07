@@ -1,0 +1,299 @@
+.my_meta_control .description
+{ display:none; }
+ 
+.my_meta_control label
+{ display:block; font-weight:bold; margin:6px; margin-bottom:0; margin-top:12px; }
+ 
+.my_meta_control label span
+{ display:inline; font-weight:normal; }
+ 
+.my_meta_control span
+{ color:#999; display:block; }
+ 
+.my_meta_control textarea, .my_meta_control input[type='text']
+{ margin-bottom:3px; width:99%; }
+ 
+.my_meta_control h4
+{ color:#999; font-size:1em; margin:15px 6px; text-transform:uppercase; }
+
+/* style for plan title and delete button */
+.plan-title #plan-name{
+  margin-top: 5px;
+}
+
+.plan-title button{
+  width: 48%;
+}
+
+.plan-title #delete-button {
+  margin-left: 1%;
+}
+
+/*
+.plan-title .feature-button:active {
+  background: yellow!important;
+}
+*/
+
+.ptp-title{
+  min-height: 27px;
+}
+
+.ptp-settings{
+  margin-top: 0px;
+
+}
+
+.plan-title{
+  padding: 10px;
+  border-style:solid;
+  border-width:1px;
+  border-color:#dfdfdf;
+  background-image:linear-gradient(to top,#ececec,#f9f9f9);
+}
+
+.plan-settings{
+  padding: 10px;
+  border-style:solid;
+  border-width:1px;
+  border-color:#dfdfdf;
+  border-top: 0px;
+}
+
+.explaination-title{
+  padding-top: 36px;
+  padding-bottom: 10px;
+}
+
+.explaination-settings{
+  padding-top: 10px;
+}
+
+.explaination-desc{
+  padding-top: 3px;
+}
+
+/* Style for "add new column" */
+.new-column{
+  border-style:dashed;
+  border-width:3px;
+  border-color:#dfdfdf;
+
+  /* 180 - 6(border)*/
+  width: 174px!important;
+
+  margin-right: 0px!important;
+
+  cursor: pointer;
+}
+
+.new-column p{
+  height: 298px;
+  margin: 0;
+
+  font-size: 1.4em;
+  color: #404040;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.6em;
+
+  display:table-cell;
+  vertical-align:middle;
+
+  width: 174px!important;
+}
+
+
+
+
+
+/** styles for drag and drop */
+.dragme {cursor: move;}
+
+
+/**
+ * Preview are styling
+ *
+.preview-meta
+{
+  background-color: white;
+}
+
+/* clear the default margin-bottom:6px; that messes up the preview *
+.ptp-col li
+{
+  margin-bottom: 0px;
+}
+*/
+
+/** float column layout **/
+.column {
+  width: 180px;
+  float: left;
+  margin-right: 10px;
+}
+
+.column li {
+  min-height: 27px;
+  vertical-align:middle;
+}
+
+.features {
+  /* 120px textare height - 3px top margin =117*/
+  height: 125px;
+}
+
+.features textarea {
+  resize: none;
+  max-height: 128px;
+}
+
+.zero
+{
+  width: 110px;
+}
+
+.footer {
+  clear: both;
+}
+
+
+/*** 
+Popover help text tooltip styling 
+***/
+.ptp-icon-help-circled:hover{
+  color:#428bca;
+}
+
+.ptp-icon-help-circled{
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+/***
+** Popover Help text styles from bootstrap 
+***/
+
+.popover {
+  max-width: 400px;
+}
+
+.popover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1010;
+  display: none;
+  max-width: 276px;
+  padding: 1px;
+  text-align: left;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  white-space: normal;
+}
+.popover.top {
+  margin-top: -10px;
+}
+.popover.right {
+  margin-left: 10px;
+}
+.popover.bottom {
+  margin-top: 10px;
+}
+.popover.left {
+  margin-left: -10px;
+}
+.popover-title {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+.popover-content {
+  padding: 9px 14px;
+}
+.popover .arrow,
+.popover .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.popover .arrow {
+  border-width: 11px;
+}
+.popover .arrow:after {
+  border-width: 10px;
+  content: "";
+}
+.popover.top .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+  border-top-color: #999999;
+  border-top-color: rgba(0, 0, 0, 0.25);
+  bottom: -11px;
+}
+.popover.top .arrow:after {
+  content: " ";
+  bottom: 1px;
+  margin-left: -10px;
+  border-bottom-width: 0;
+  border-top-color: #ffffff;
+}
+.popover.right .arrow {
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+  border-left-width: 0;
+  border-right-color: #999999;
+  border-right-color: rgba(0, 0, 0, 0.25);
+}
+.popover.right .arrow:after {
+  content: " ";
+  left: 1px;
+  bottom: -10px;
+  border-left-width: 0;
+  border-right-color: #ffffff;
+}
+.popover.bottom .arrow {
+  left: 50%;
+  margin-left: -11px;
+  border-top-width: 0;
+  border-bottom-color: #999999;
+  border-bottom-color: rgba(0, 0, 0, 0.25);
+  top: -11px;
+}
+.popover.bottom .arrow:after {
+  content: " ";
+  top: 1px;
+  margin-left: -10px;
+  border-top-width: 0;
+  border-bottom-color: #ffffff;
+}
+.popover.left .arrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+  border-left-color: #999999;
+  border-left-color: rgba(0, 0, 0, 0.25);
+}
+.popover.left .arrow:after {
+  content: " ";
+  right: 1px;
+  border-right-width: 0;
+  border-left-color: #ffffff;
+  bottom: -10px;
+}
