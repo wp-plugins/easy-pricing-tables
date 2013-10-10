@@ -4,7 +4,7 @@
 	Plugin URI: http://wordpress.org/extend/plugins/plugin-name/
 	Description: Easily create highly converting pricing tables.
 	Author: David Hehenberger
-	Version: 1.0
+	Version: 1.0.1
 	Author URI: http://shoppingcartlabs.com/
  */
 

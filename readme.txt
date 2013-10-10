@@ -1,28 +1,46 @@
-=== Plugin Name ===
+=== Easy Pricing Tables ===
 Contributors: davidhme
-Donate link: http://example.com/
-Tags: pricing table, wordpress pricing table, pricing, responsive pricing table
+Tags: pricing table, wordpress pricing table, pricing, responsive pricing table, flat ui pricing table
+Author URI: http://shoppingcartlabs.com/
+Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 Requires at least: 3.6
 Tested up to: 3.6.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin makes it easy to publish highly converting, responsive pricing tables on your site.
+Create a Beautiful, Responsive and Highly Converting Pricing Table in Less Than 5 Minutes with Easy Pricing Tables for WordPress. No Coding Required.
 
 == Description ==
+**Easy Pricing Tables for Wordpress** makes it easy to create and publish beautiful pricing tables on your WordPress site. You will be able to set up and publish your pricing table in no time.
 
-Features
-* responsive
-* user friendly interface
-* create unlimited rows and columns
-* display pricing table via shortcode
+Easy Pricing Tables implements conversion rate optimization (CRO) best practices and guides you through the process of creating a pricing table that converts. 
+
+This plugin works with any WordPress theme you have installed. After installing the plugin and creating your first pricing table, you can publish your table anywhere on your site using a shortcode.
+
+*   [View A Pricing Table Live Demo &raquo;](http://shoppingcartlabs.com/easy-pricing-tables-demo/)
+
+**Features**
+*   Works with any WordPress Theme
+*   Responsive Pricing Tables
+*   Intuitive User Interface
+*   Create Unlimited Rows and Columns
+*   Featured Column Support
+*   Built-in Conversion Rate Optimization Best Practices
+
+**Coming Soon (by Oct 18)**
+*   CSS Improvements regarding table-responsiveness
+*   Use drag & drop to reorder columns
+*   More color schemes
+*   (Got more ideas? Tell me!)
+
+If you have suggestions for a new add-on, feel free to email me at hi@shoppingcartlabs.com.
 
 == Installation ==
 
 1. Upload `easy-pricing-tables.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. In your sidebar, select Pricing Tables -> Add New
+3. In your sidebar, select 'Pricing Tables -> Add New' to create a new table
 
 == Frequently Asked Questions ==
 
@@ -37,7 +55,10 @@ hi[at]shoppingcartlabs.com
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
+* Improved readme.txt
+
+= 1.0.0 =
 * Initial release
 
 
