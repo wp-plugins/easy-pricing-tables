@@ -24,7 +24,7 @@
 			            &lt;br/&gt;&lt;br/&gt; 
 			            &lt;strong&gt;Best practice:&lt;/strong&gt;
 			            &lt;br/&gt;
-			            Don't overwhelm users with too much content. Long pricing tables are concusing and difficult to read.
+			            Don't overwhelm users with too much content. Long pricing tables are confusing and difficult to read.
 			            "></i>
 			        </li>
 			        <li class="explaination-desc">
@@ -34,9 +34,9 @@
 			            &lt;strong&gt;Best practice:&lt;/strong&gt;
 			            &lt;br/&gt;
 			            Here are some of the highest converting variations:;&lt;br/&gt; 
-			            * Add To Cart;&lt;br/&gt; 
-			            * Sign Up;&lt;br/&gt; 
-			            * Sign Up Free;&lt;br/&gt; 
+			            * Add To Cart&lt;br/&gt; 
+			            * Sign Up&lt;br/&gt; 
+			            * Sign Up Free&lt;br/&gt; 
 			            * Start Free Trial"></i>
 			        </li>
 			        <li class="explaination-desc">

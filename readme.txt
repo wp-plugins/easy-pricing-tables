@@ -1,11 +1,11 @@
 === Easy Pricing Tables ===
 Contributors: davidhme
-Tags: pricing table, wordpress pricing table, pricing, responsive pricing table, flat ui pricing table
+Tags: pricing table, responsive pricing table, comparison, comparison table, css table, price, price gird, pricing, pricing box, pricing gird, table
 Author URI: http://shoppingcartlabs.com/
 Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 Requires at least: 3.6
 Tested up to: 3.6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,7 @@ This plugin works with any WordPress theme you have installed. After installing 
 *   [View A Pricing Table Live Demo &raquo;](http://shoppingcartlabs.com/easy-pricing-tables-demo/)
 
 **Features**
+
 *   Works with any WordPress Theme
 *   Responsive Pricing Tables
 *   Intuitive User Interface
@@ -29,7 +30,7 @@ This plugin works with any WordPress theme you have installed. After installing 
 *   Built-in Conversion Rate Optimization Best Practices
 
 **Coming Soon (by Oct 18)**
-*   CSS Improvements regarding table-responsiveness
+
 *   Use drag & drop to reorder columns
 *   More color schemes
 *   (Got more ideas? Tell me!)
@@ -54,6 +55,12 @@ hi[at]shoppingcartlabs.com
 2. The settings screen
 
 == Changelog ==
+= 1.0.2 =
+* Fixed typos
+* Improved responsive CSS
+* Improved button design
+* Changed design of highlighted column
+* Bugfixes
 
 = 1.0.1 =
 * Improved readme.txt

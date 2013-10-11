@@ -47,6 +47,7 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 		 */
 		$pricing_table_html = '<div class="ptp-pricing-table" >';
 
+		// set number of columns
 		$number_of_columns;
 		switch (count($meta['column'])) {
 		 	case 1:
@@ -71,7 +72,25 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 	 			$number_of_columns = "more-col";
 	 			break;
 	 	}
-		 
+		
+		// set max number of features
+		$dh_ptp_max_number_of_features = 0;
+
+		$planfeatures;
+
+		// get plan features
+		foreach ($meta['column'] as $column) 
+		{
+			if(isset($column['planfeatures']))
+			{
+				$planfeatures = $column['planfeatures'];
+				// get number of features
+				$col_number_of_features = count( explode( "\n", $column['planfeatures'] ) );
+
+				if ($col_number_of_features > $dh_ptp_max_number_of_features)
+					$dh_ptp_max_number_of_features = $col_number_of_features;
+			}
+		}
 
 		foreach ($meta['column'] as $column) 
 		{
@@ -86,13 +105,14 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 			if(isset($column['planprice']))
 				$planprice = $column['planprice'];
 			else
-				 $planprice = '';				
+				 $planprice = '';	
 
-			// get plan price
 			if(isset($column['planfeatures']))
+			{
 				$planfeatures = $column['planfeatures'];
+			}
 			else
-				 $planfeatures = '';	
+				 $planfeatures = '';				
 
 			// get plan price
 			if(isset($column['buttonurl']))
@@ -111,28 +131,28 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 				if ($column['feature'] == "featured")
 				{
 					$feature = "ptp-highlight";
-					$feature_label = '<li class="ptp-description">Most Popular</li>';
+					$feature_label = '<div class="ptp-most-popular">Most Popular</div>';
 				}
 				else
 				{
 					$feature = '';	
-			 		$feature_label = '';
+			 		$feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
 			 	}
 			else
 			{
 				 $feature = '';	
-				 $feature_label = '';
+				 $feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
 			}
 
 			// create the html code
 			$pricing_table_html .= '
-			<div class="ptp-col ' . $number_of_columns . ' '. $feature . '">
-				<ul>
-				  <li class="ptp-plan">' . $planname . '</li>
-				  <li class="ptp-price">' . $planprice . '</li>' 
-				  . $feature_label
-				  . dh_ptp_features_to_html($planfeatures) . '
-				  <li class="ptp-cta"><a class="ptp-button" href="' . $buttonurl . '">' . $buttontext . '</a></li>
+			<div class="ptp-col ' . $number_of_columns . ' '. $feature . '">'
+				. $feature_label .
+				'<ul>
+					<li class="ptp-plan">' . $planname . '</li>
+			  		<li class="ptp-price">' . $planprice . '</li>' 				  
+			  		. dh_ptp_features_to_html($planfeatures,$dh_ptp_max_number_of_features) . '
+		  			<li class="ptp-cta"><a class="ptp-button" href="' . $buttonurl . '">' . $buttontext . '</a></li>
 				</ul>
 			</div>
 			';
@@ -152,7 +172,7 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
  * @param  [type] $dh_ptp_plan_features [description]
  * @return [type]                       [description]
  */
-function dh_ptp_features_to_html ($dh_ptp_plan_features){
+function dh_ptp_features_to_html ($dh_ptp_plan_features, $dh_ptp_max_number_of_features){
 
 	// the string to be returned
 	$dh_ptp_feature_html = "";
@@ -160,9 +180,22 @@ function dh_ptp_features_to_html ($dh_ptp_plan_features){
 	// explode string into a useable array
 	$dh_ptp_features = explode("\n", $dh_ptp_plan_features);
 
+	//how many features does this column have?
+	$this_columns_number_of_features = count($dh_ptp_features);
+
 	//add each feature to $dh_ptp_feature_html 
-	foreach ($dh_ptp_features as $feature) {
-		$dh_ptp_feature_html .= '<li class="ptp-bullet-item">' . $feature . '</li>';
+	for ($iterator=0; $iterator<$dh_ptp_max_number_of_features; $iterator++)
+	{
+		if ($iterator < $this_columns_number_of_features)
+		{
+			if ($dh_ptp_features[$iterator] == "") {
+				$dh_ptp_feature_html .= '<li class="ptp-bullet-item">&nbsp;</li>';
+			}
+			else
+				$dh_ptp_feature_html .= '<li class="ptp-bullet-item">' . $dh_ptp_features[$iterator] . '</li>';
+		}
+		else
+			$dh_ptp_feature_html .= '<li class="ptp-bullet-item">&nbsp;</li>';
 	}
 
 	// return the features html
