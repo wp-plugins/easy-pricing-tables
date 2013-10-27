@@ -29,6 +29,7 @@ This plugin works with any WordPress theme you have installed. After installing 
 *   Create Unlimited Rows and Columns
 *   Featured Column Support
 *   Built-in Conversion Rate Optimization Best Practices
+*	Customize your design with color pickers and rounded borders.
 
 **Coming Soon**
 
