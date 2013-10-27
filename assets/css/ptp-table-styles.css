@@ -3,6 +3,9 @@
   width: 100%;
 }
 
+.ptp-pricing-table ul{
+  padding: 0px!important;
+}
 .ptp-pricing-table ul li{
 list-style: none;
 
