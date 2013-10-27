@@ -3,6 +3,7 @@
   width: 100%;
 }
 
+/* fix woothemes incompatibility */
 .ptp-pricing-table ul{
   padding: 0px!important;
 }

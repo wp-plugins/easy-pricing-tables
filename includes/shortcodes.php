@@ -107,6 +107,64 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 			}
 		}
 
+		/* get all variables from custom settings */
+		/** Settings **/
+		// get rounded corner width
+		if(isset($meta['rounded-corners']))
+			$rounded_corner_with = $meta['rounded-corners'];
+		else
+			 $rounded_corner_with = '0px';	
+
+		// get featured button font color
+		if(isset($meta['featured-button-font-color']))
+			$featured_button_font_color = $meta['featured-button-font-color'];
+		else
+			$featured_button_font_color = '#ffffff';
+
+		// get featured button color
+		if(isset($meta['featured-button-color']))
+			$featured_button_color = $meta['featured-button-color'];
+		else
+			 $featured_button_color = '#3498db';
+
+		// get featured button  border color
+		if(isset($meta['featured-button-border-color']))
+			$featured_button_border_color = $meta['featured-button-border-color'];
+		else
+			 $featured_button_border_color = '#2980b9';
+
+		// get featured button hover color
+		if(isset($meta['featured-button-hover-color']))
+			$featured_button_hover_color = $meta['featured-button-hover-color'];
+		else
+			 $featured_button_hover_color = '#2980b9';
+
+		// non-featured buttons
+		// get  button font color
+		if(!empty($meta['button-font-color']))
+			$button_font_color = $meta['button-font-color'];
+		else
+			$button_font_color = '#ffffff';
+
+		// get button color
+		if(!empty($meta['button-color']))
+			$button_color = $meta['button-color'];
+		else
+			 $button_color = '#e74c3c';
+
+		// get button border color
+		if(isset($meta['button-border-color']))
+			$button_border_color = $meta['button-border-color'];
+		else
+			 $button_border_color = '#c0392b';
+
+		// get button hover color
+		if(isset($meta['button-hover-color']))
+			$button_hover_color = $meta['button-hover-color'];
+		else
+			 $button_hover_color = '#c0392b';
+
+
 		foreach ($meta['column'] as $column) 
 		{
 			// beneath ifs are to prevent 'undefined variable notice'. It wasn't possible to put this code into a function since the passing argument might be undefined.
@@ -148,24 +206,37 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 					$feature = "ptp-highlight";
 					$feature_label = '<div class="ptp-most-popular" style="border-radius: ' . $meta['rounded-corners'] . ';">Most Popular</div>';
 					
-					$button_style = 'color:' . $meta['featured-button-font-color'] . '!important;background-color:' . $meta['featured-button-color']. ';border-bottom: ' . $meta['featured-button-border-color'] . ' 4px solid!important;';
-					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['featured-button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['featured-button-color'] . '\'" ';
+					//$button_style = 'color:' . $meta['featured-button-font-color'] . '!important;background-color:' . $meta['featured-button-color']. ';border-bottom: ' . $meta['featured-button-border-color'] . ' 4px solid!important;';
+					//$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['featured-button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['featured-button-color'] . '\'" ';
+					// isset doesnt seem to work!!!
+					$button_style = 'color:' . $featured_button_font_color . '!important;background-color:' . $featured_button_color . ';border-bottom: ' . $featured_button_border_color . ' 4px solid!important;';
+					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $featured_button_hover_color . '\'" onMouseOut = "this.style.backgroundColor=\'' . $featured_button_color . '\'" ';
+				
 				}
 				else
 				{
 					$feature = '';	
 			 		$feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
 
-					$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
-					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
+			 		$button_style = 'color:' . $button_font_color . '!important;background-color:' . $button_color . ';border-bottom: ' . $button_border_color . ' 4px solid!important;';
+					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $button_hover_color . '\'" onMouseOut = "this.style.backgroundColor=\'' . $button_color . '\'" ';
+			
+
+					//$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
+					//$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
 			 	}
 			else
 			{
 				 $feature = '';	
 				 $feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
 
-				$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
-				$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
+
+				$button_style = 'color:' . $button_font_color . '!important;background-color:' . $button_color . ';border-bottom: ' . $button_border_color . ' 4px solid!important;';
+				$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $button_hover_color . '\'" onMouseOut = "this.style.backgroundColor=\'' . $button_color . '\'" ';
+			
+
+				//$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
+				//$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
 			}
 
 			// create the html code

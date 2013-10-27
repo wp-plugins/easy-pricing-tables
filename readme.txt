@@ -6,7 +6,7 @@ Author URI: http://shoppingcartlabs.com/
 Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 Requires at least: 3.6
 Tested up to: 3.7
-Stable tag: 1.1.0
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ hi[at]shoppingcartlabs.com
 4. Design options
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed bug related to colorpicker introduced with version 1.1.0
+
+= 1.1.1 =
+* Fixed Woothems incompatibility
 
 = 1.1.0 =
 * Added new design options (colors & rounded corners)
