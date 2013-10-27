@@ -1,10 +1,10 @@
 <?php
 /*
 	Plugin Name: Easy Pricing Tables
-	Plugin URI: http://wordpress.org/extend/plugins/plugin-name/
+	Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 	Description: Create a Beautiful, Responsive and Highly Converting Pricing Table in Less Than 5 Minutes with Easy Pricing Tables for WordPress. No Coding Required.
 	Author: David Hehenberger
-	Version: 1.0.2.1
+	Version: 1.1.0
 	Author URI: http://shoppingcartlabs.com/
  */
 
@@ -17,12 +17,18 @@ include ( PTP_PLUGIN_PATH . 'includes/post-types.php');
 //include shortcodes
 include ( PTP_PLUGIN_PATH . 'includes/shortcodes.php');
 
+if(is_admin())
+{
+	//include custom-css-generator => on hold now
+	//include ( PTP_PLUGIN_PATH . 'includes/custom-css-generator.php');
+}
 
 /**
  * include WPAlchemy setup script and spec
  */
 include_once ( PTP_PLUGIN_PATH . 'includes/libraries/metaboxes/setup.php');
 include_once ( PTP_PLUGIN_PATH . 'includes/libraries/metaboxes/spec.php');
+
 
 // Add settings link on plugin page
 function dh_ptp_plugin_settings_link($links) { 

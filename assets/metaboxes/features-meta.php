@@ -1,198 +1,267 @@
-<div id="ui-columns" class="my_meta_control">
-		<h4>Pricing Table Columns</h4>
-	        <div class="column zero">
-	        	<div class="ptp-title explaination-title">
-		        	<strong>Plan Name</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Plan Name&lt;/strong&gt;" data-content="
-		            Enter your pricing plan - names here.
-		            &lt;br/&gt;&lt;br/&gt; 
-		            &lt;strong&gt;Best practice:&lt;/strong&gt;
-		            &lt;br/&gt;
-		            Avoid generic names such as &lt;em&gt;Bronze&lt;/em&gt;, &lt;em&gt;Silver&lt;/em&gt; and &lt;em&gt;Gold&lt;/em&gt;.&lt;br/&gt;
-		            Instead, choose aspirational names like &lt;em&gt;Personal&lt;/em&gt;, &lt;em&gt;Small Business&lt;/em&gt; and &lt;em&gt;Enterprise&lt;/em&gt;.&lt;br/&gt;&lt;br/&gt;
-		            Many people choose plans based on names, not features: A corporate buyer might choose &lt;em&gt;Enterprise&lt;/em&gt; even though &lt;em&gt;Personal&lt;/em&gt; might be sufficient for his use-case.
-		            "></i>
-		        </div>
-		        <ul class="ptp-settings explaination-settings">
-			        <li class="explaination-desc">
-			            <strong>Pricing</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Pricing&lt;/strong&gt;" data-content="
-			            Enter your pricing options here.
-			            "></i>
-		            </li>
-		            <li class="features explaination-desc">
-		            	<strong>Plan Features</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Features&lt;/strong&gt;" data-content="
-			            Enter your features here (one per line).
+<div id="dh_ptp_tabs_container" class="my_meta_control">
+		<ul id="dh_ptp_metabox_tabs">
+		    <li class="dh_ptp_tab_header"><a href="#dh_ptp_tabs_1">1. Create Content</a></li>
+		    <li class="dh_ptp_tab_header"><a href="#dh_ptp_tabs_2">2. Design Table</a></li>
+		    <li class="dh_ptp_tab_header"><a href="#dh_ptp_tabs_3">3. Publish Table</a></li>
+	    </ul>
+	    <!-- clear our floats -->
+       	<div class="clear"></div>
+
+
+	    <div id="dh_ptp_tabs_1" class="dh_ptp_tab">
+			<h4>Pricing Table Columns</h4>
+		        <div class="column zero">
+		        	<div class="ptp-title explaination-title">
+			        	<strong>Plan Name</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Plan Name&lt;/strong&gt;" data-content="
+			            Enter your pricing plan - names here.
 			            &lt;br/&gt;&lt;br/&gt; 
 			            &lt;strong&gt;Best practice:&lt;/strong&gt;
 			            &lt;br/&gt;
-			            Don't overwhelm users with too much content. Long pricing tables are confusing and difficult to read.
+			            Avoid generic names such as &lt;em&gt;Bronze&lt;/em&gt;, &lt;em&gt;Silver&lt;/em&gt; and &lt;em&gt;Gold&lt;/em&gt;.&lt;br/&gt;
+			            Instead, choose aspirational names like &lt;em&gt;Personal&lt;/em&gt;, &lt;em&gt;Small Business&lt;/em&gt; and &lt;em&gt;Enterprise&lt;/em&gt;.&lt;br/&gt;&lt;br/&gt;
+			            Many people choose plans based on names, not features: A corporate buyer might choose &lt;em&gt;Enterprise&lt;/em&gt; even though &lt;em&gt;Personal&lt;/em&gt; might be sufficient for his use-case.
 			            "></i>
-			        </li>
-			        <li class="explaination-desc">
-			        	<strong>Button Text</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Call To Action Text&lt;/strong&gt;" data-content="
-			            Enter your call to action text here.
-			            &lt;br/&gt;&lt;br/&gt; 
-			            &lt;strong&gt;Best practice:&lt;/strong&gt;
-			            &lt;br/&gt;
-			            Here are some of the highest converting variations:;&lt;br/&gt; 
-			            * Add To Cart&lt;br/&gt; 
-			            * Sign Up&lt;br/&gt; 
-			            * Sign Up Free&lt;br/&gt; 
-			            * Start Free Trial"></i>
-			        </li>
-			        <li class="explaination-desc">
-			        	<strong>Button URL</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Call To Action URL&lt;/strong&gt;" data-content="
-			            Enter your call to action URL here. This is usually either a payment link (e.g. PayPal) or a page where users can create an account.
-			            "></i>
-			        </li>
-	        	</ul>
-	        </div>
-
-	    	<?php 
-	    	/**
-	    	 * the loop used to display our tables
-	    	 */
-	    	while($mb->have_fields_and_multi('column',array('length' => 2))): 
-    		?>
-			<?php $mb->the_group_open(); ?>
-				<div class="column">
-
-		        	<div class="ptp-title plan-title">
-
-		        		<?php $mb->the_field('feature');?>
-			            <input type="hidden" name="<?php $mb->the_name(); ?>" value="<?php if(!is_null($metabox->get_the_value())){$mb->the_value();} ?>" class="form-control" />
-			
-						<button class="button button-small feature-button <?php if($mb->get_the_value()=="featured"){echo "ptp-icon-star";}else {echo "ptp-icon-star-empty";}?>" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Feature This Column&lt;/strong&gt;" data-content="Click this button to feature this column. A featured column appears bigger and includes the wording 'Most Popular'. You can only feature one column per table.">Endorse</button>
-
-            			<button class="button button-small dodelete ptp-icon-trash" id="delete-button" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Delete This Column&lt;/strong&gt;" data-content="Click this button to delete this column.">Delete</button>
-			        	
-			        	<?php $mb->the_field('planname');?>
-			            <input id="plan-name" type="text" name="<?php $mb->the_name(); ?>" value="<?php 
-			            if(!is_null($mb->get_the_value())) 
-			            	echo $mb->the_value();
-		            	 // make sure this isn't the last iteration. otherwise default values would be added to empty columns which will lead to duplication problems.
-		            	 elseif (!$mb->is_last()) {
-		            	 	switch ($mb->get_the_index()) {
-		            	 		case 0:
-		            	 			echo "Professional";
-		            	 			break;
-	            	 			case 1:
-	            	 				echo "Small Business";
-	            	 				break;
-		            	 		case 2:
-		            	 			echo "Enterprise";
-		            	 			break;
-	            	 			default:
-		            	 			echo "Enterprise";
-		            	 			break;
-		            	 	}
-		            	 	
-		            	 } 
-			            ?>" class="form-control">
 			        </div>
-
-			        <ul class="ptp-settings plan-settings">
-				        <li>
-				        	<?php $mb->the_field('planprice'); ?>
-				            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php 
-				            if(!is_null($mb->get_the_value())) 
-				            	echo $mb->the_value();
-	            	 		elseif (!$mb->is_last()) {
-			            	 	switch ($mb->get_the_index()) {
-			            	 		case 0:
-			            	 			echo "$49/mo";
-			            	 			break;
-		            	 			case 1:
-		            	 				echo "$99/mo";
-		            	 				break;
-			            	 		case 2:
-			            	 			echo "$199/mo";
-			            	 			break;
-		            	 			default:
-			            	 			echo "$199/mo";
-			            	 			break;
-			            	 	}
-		            	 	
-		            	 	} 
-				            ?>" class="form-control">
+			        <ul class="ptp-settings explaination-settings">
+				        <li class="explaination-desc">
+				            <strong>Pricing</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Pricing&lt;/strong&gt;" data-content="
+				            Enter your pricing options here.
+				            "></i>
+			            </li>
+			            <li class="features explaination-desc">
+			            	<strong>Plan Features</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Features&lt;/strong&gt;" data-content="
+				            Enter your features here (one per line).
+				            &lt;br/&gt;&lt;br/&gt; 
+				            &lt;strong&gt;Best practice:&lt;/strong&gt;
+				            &lt;br/&gt;
+				            Don't overwhelm users with too much content. Long pricing tables are confusing and difficult to read.
+				            "></i>
 				        </li>
-				        <li class="features">
-				        	<?php $mb->the_field('planfeatures'); ?>
-				            <textarea name="<?php $mb->the_name(); ?>" class="form-control" rows="7"><?php 
-				            if(!is_null($mb->get_the_value())) 
-				            	echo $mb->the_value();
-			            	 elseif (!$mb->is_last()) {
-			            	 	switch ($mb->get_the_index()) {
-			            	 		case 0:
-			            	 			echo "1 Website\n30,000 Monthly Visits\nUnlimited Data Transfer\n5GB Storage";
-			            	 			break;
-		            	 			case 1:
-		            	 				echo "3 Websites\n100,000 Monthly Visits\nUnlimited Data Transfer\n15GB Storage";
-		            	 				break;
-			            	 		case 2:
-			            	 			echo "10 Websites\n250,000 Monthly Visits\nUnlimited Data Transfer\nUnlimited Storage";
-			            	 			break;
-		            	 			default:
-			            	 			echo "10 Websites\n250,000 Monthly Visits\nUnlimited Data Transfer\nUnlimited Storage";
-			            	 			break;
-			            	 	}
-		            	 	}  
-				        
-				            ?></textarea>
+				        <li class="explaination-desc">
+				        	<strong>Button Text</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Call To Action Text&lt;/strong&gt;" data-content="
+				            Enter your call to action text here.
+				            &lt;br/&gt;&lt;br/&gt; 
+				            &lt;strong&gt;Best practice:&lt;/strong&gt;
+				            &lt;br/&gt;
+				            Here are some of the highest converting variations:;&lt;br/&gt; 
+				            * Add To Cart&lt;br/&gt; 
+				            * Sign Up&lt;br/&gt; 
+				            * Sign Up Free&lt;br/&gt; 
+				            * Start Free Trial"></i>
 				        </li>
-
-				        <li>
-				        	<?php $mb->the_field('buttontext'); ?>
-				            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php 
-				             if(!is_null($mb->get_the_value())) 
-				            	echo $mb->the_value();
-			            	 else {		
-			            	 	if (!$mb->is_last())
-			            	 		echo "Start A Free Trial";
-			            	 }		            
-		            	 	?>" class="form-control">
+				        <li class="explaination-desc">
+				        	<strong>Button URL</strong><i class="ptp-icon-help-circled" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Call To Action URL&lt;/strong&gt;" data-content="
+				            Enter your call to action URL here. This is usually either a payment link (e.g. PayPal) or a page where users can create an account.
+				            "></i>
 				        </li>
+		        	</ul>
+		        </div>
 
-				        <li>
-				        	<?php $mb->the_field('buttonurl'); ?>
-				            <input type="text" name="<?php $mb->the_name(); ?>" value="<?php
-				            if(!is_null($mb->get_the_value())) 
-				            	echo $mb->the_value();
-			            	 elseif (!$mb->is_last()) {
-			            	 	switch ($mb->get_the_index()) {
-			            	 		case 0:
-			            	 			echo "http://example.com/buy-1";
-			            	 			break;
-		            	 			case 1:
-			            	 			echo "http://example.com/buy-2";
-		            	 				break;
-			            	 		case 2:
-			            	 			echo "http://example.com/buy-3";
-			            	 			break;
-		            	 			default:
-			            	 			echo "http://example.com/buy-3";
-			            	 			break;
-		            	 		}
-		            	 	}  
+		    	<?php 
+		    	/**
+		    	 * the loop used to display our tables
+		    	 */
+		    	while($mb->have_fields_and_multi('column',array('length' => 2))): 
+	    		?>
+				<?php $mb->the_group_open(); ?>
+					<div class="column">
 
-				            ?>" class="form-control">
-				        </li>
-			    	</ul>
-		        </div>	
-	        <?php $mb->the_group_close(); ?>
-    		<?php endwhile; ?>
+			        	<div class="ptp-title plan-title">
 
-       		<div class="column new-column docopy-column"><p>Click to add a<br/>new column.</p></div>
-	       	
-	       	<!-- clear our floats -->
-	       	<div class="footer"></div>
+			        		<?php $mb->the_field('feature');?>
+				            <input type="hidden" name="<?php $mb->the_name(); ?>" value="<?php if(!is_null($metabox->get_the_value())){$mb->the_value();} ?>" class="form-control" />
+				
+							<button class="button button-small feature-button <?php if($mb->get_the_value()=="featured"){echo "ptp-icon-star";}else {echo "ptp-icon-star-empty";}?>" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Feature This Column&lt;/strong&gt;" data-content="Click this button to feature this column. A featured column appears bigger and includes the wording 'Most Popular'. You can only feature one column per table.">Endorse</button>
 
-	       	<h4>Shortcode</h4>
-	       	<p>Copy the shortcode below and paste it wherever you want your pricing table to appear.</p>
-			<input type="text" readonly="readonly" onclick="this.select()" value="[easy-pricing-table id=&quot;<?php the_ID(); ?>&quot;]"/>
+	            			<button class="button button-small dodelete ptp-icon-trash" id="delete-button" data-trigger="hover" data-html="true" data-placement="right" data-original-title="&lt;strong&gt;Delete This Column&lt;/strong&gt;" data-content="Click this button to delete this column.">Delete</button>
+				        	
+				        	<?php $mb->the_field('planname');?>
+				            <input id="plan-name" type="text" name="<?php $mb->the_name(); ?>" placeholder="e.g. Small Business" value="<?php echo $mb->the_value(); ?>" class="form-control">
+				        </div>
 
-			<h4>Support</h4>
-			<p>Feature requests? Questions? Problems? Email me at <a href="mailto:hi@shoppingcartlabs.com" target="_top">hi@shoppingcartlabs.com</a>.</p>
+				        <ul class="ptp-settings plan-settings">
+					        <li>
+					        	<?php $mb->the_field('planprice'); ?>
+					            <input type="text" name="<?php $mb->the_name(); ?>" placeholder="e.g. $49/mo" value="<?php echo $mb->the_value(); ?>" class="form-control">
+					        </li>
+					        <li class="features">
+					        	<?php $mb->the_field('planfeatures'); ?>
+					            <textarea name="<?php $mb->the_name(); ?>" class="form-control" rows="7" placeholder="e.g. 1 Website                             30,000 Monthly Visits                             Unlimited Data Transfer                             5GB Storage""><?php echo $mb->the_value(); ?></textarea>
+					        </li>
 
+					        <li>
+					        	<?php $mb->the_field('buttontext'); ?>
+					            <input type="text" pla name="<?php $mb->the_name(); ?>" placeholder="e.g. Start A Free Trial" value="<?php  $mb->the_value(); ?>" class="form-control">
+					        </li>
+
+					        <li>
+					        	<?php $mb->the_field('buttonurl'); ?>
+					            <input type="text" placeholder="e.g. http://example.com/buy" name="<?php $mb->the_name(); ?>" value="<?php echo $mb->the_value();?>" class="form-control">
+					        </li>
+				    	</ul>
+			        </div>	
+		        <?php $mb->the_group_close(); ?>
+	    		<?php endwhile; ?>
+
+	       		<div class="column new-column docopy-column"><p>Click to add a<br/>new column.</p></div>
+		       	
+		       	<!-- clear our floats -->
+		       	<div class="clear"></div>
+
+	       	</div>
+
+	       	<div id="dh_ptp_tabs_2" class="dh_ptp_tab">
+		       	<h4>Design</h4>
+
+		       	<table>
+
+	       		<! -- Rounded Corners -->
+	       		<tr class="table-headline"><td><br/>Rounded Corners</td></tr>
+		       	<tr>
+		       		<td>Border Radius</td>
+		        	<?php $mb->the_field('rounded-corners'); ?>
+		        	<td><select name="<?php $metabox->the_name(); ?>">
+						<option value="0px" <?php  
+							if(!is_null($mb->get_the_value())) 
+							{
+				            	if($mb->get_the_value() == '0px')
+				            	{
+									echo 'selected';
+				            	}
+			            	}
+			            	else {
+			            		echo 'selected';
+			            	}
+						?> >No Rounded Corners</option>
+						<?php
+							for($i=1;$i<=20;++$i){
+
+				            	if($mb->get_the_value() == $i . 'px')
+				            	{
+									echo '<option value="' . $i . 'px" selected>' . $i . 'px</option>';
+				            	}
+		            	 		else
+									echo '<option value="' . $i . 'px" >' . $i . 'px</option>';
+
+							}
+						?>
+					</select></td>
+		       	</tr>
+
+	       		
+	       		<!-- Normal Buttons -->
+		       	<tr class="table-headline"><td><br/>Button Color</td></tr>
+		       	<tr>
+		       		<td>Button Color</td>
+		        	<?php $mb->the_field('button-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#3498db";
+					            ?>
+		       			" class="my-color-field form-control" data-default-color="#3498db" /></td>
+		       	</tr>
+
+		       	<tr>
+		       		<td>Button Border Color</td>
+		        	<?php $mb->the_field('button-border-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#2980b9";
+					            ?>
+		       			" class="my-color-field" data-default-color="#2980b9" /></td>
+		       	</tr>
+
+		       	<tr>
+		       		<td>Button Hover Color</td>
+		        	<?php $mb->the_field('button-hover-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#2980b9";
+					            ?>
+		       			" class="my-color-field" data-default-color="#2980b9" /></td>
+		       	</tr>
+
+				<tr>
+		       		<td>Button Font Color</td>
+		        	<?php $mb->the_field('button-font-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-font-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#ffffff";
+					            ?>
+		       			" class="my-color-field" data-default-color="#ffffff" /></td>
+		       	</tr>
+
+		       	<!-- Featured Buttons -->
+		       	<tr class="table-headline"><td><br/>Button Color (Endorsed Column)</td></tr>
+	       		<tr>
+		       		<td>Endorsed-Button Color</td>
+		        	<?php $mb->the_field('featured-button-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#e74c3c";
+					            ?>
+		       			" class="my-color-field form-control" data-default-color="#e74c3c" /></td>
+		       	</tr>
+
+		       	<tr>
+		       		<td>Endorsed-Button Border Color</td>
+		        	<?php $mb->the_field('featured-button-border-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#c0392b";
+					            ?>
+		       			" class="my-color-field" data-default-color="#c0392b" /></td>
+		       	</tr>
+
+		       	<tr>
+		       		<td>Endorsed-Button Hover Color</td>
+		        	<?php $mb->the_field('featured-button-hover-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#c0392b";
+					            ?>
+		       			" class="my-color-field" data-default-color="#c0392b" /></td>
+		       	</tr>
+
+				<tr>
+		       		<td>Endorsed-Button Font Color</td>
+		        	<?php $mb->the_field('featured-button-font-color'); ?>
+		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-font-color" value="<?php 
+					            if(!is_null($mb->get_the_value())) 
+					            	echo $mb->the_value();
+		            	 		else
+		            	 			echo "#ffffff";
+					            ?>
+		       			" class="my-color-field" data-default-color="#ffffff" /></td>
+		       	</tr>
+
+		       	</table>
+
+	       	</div>
+
+	       	<div id="dh_ptp_tabs_3" class="dh_ptp_tab">
+		       	<h4>How To Publish This Table</h4> 
+		       	<p><strong>Step 1:</strong> Publish/Update this table using the big, blue button to your right. =></p>
+		       	<p><strong>Step 2:</strong> Copy the shortcode below and paste it wherever you want your pricing table to appear.</p>
+				<input type="text" readonly="readonly" onclick="this.select()" value="[easy-pricing-table id=&quot;<?php the_ID(); ?>&quot;]"/>
+
+				<h4>Support</h4>
+				<p>Feature requests? Questions? Problems? Email me at <a href="mailto:hi@shoppingcartlabs.com" target="_top">hi@shoppingcartlabs.com</a>.</p>
+			</div>
 
 
 </div>

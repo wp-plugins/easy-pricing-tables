@@ -1,5 +1,10 @@
 <?php
 
+// get the metabox info that relates to this shortcode
+global $features_metabox;
+$meta = '';
+
+
 /**
  * execute on shortcode appearance
  * read more: http://pippinsplugins.com/listing-custom-post-type-entries-with-a-short-code/
@@ -11,11 +16,23 @@ function dh_ptp_message_shortcode( $atts) {
 	//load shortcode css
 	wp_enqueue_style( 'ptp-styles', plugins_url( 'assets/css/ptp-table-styles.css', dirname(__FILE__) ) );
 
+
+	//add pricing table css to head
+	//add_filter('wp_head', 'dh_ptp_css_to_head');
+
+
 	// extract id shortcode
     extract(shortcode_atts( array('id' => ''), $atts));  
 
     if ($id != '' )
     {
+
+    	//get the meta info for this post type
+    	global $features_metabox;
+		global $meta;
+		$meta = get_post_meta($id, $features_metabox->get_the_id(), TRUE);
+
+
     	//return our pricing table html
 		return dh_ptp_generate_pricing_table_html($id);
     }
@@ -34,9 +51,7 @@ add_shortcode( 'easy-pricing-table', 'dh_ptp_message_shortcode' );
  * @return [type]                          [description]
  */
 function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
-	// get the metabox info that relates to this shortcode
-	global $features_metabox;
-	$meta = get_post_meta($dh_ptp_pricing_table_id, $features_metabox->get_the_id(), TRUE);
+	global $meta;
 
 	// if meta contains values (this means the pricing table at our current id exists)
 	if ($meta != "")
@@ -131,28 +146,39 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 				if ($column['feature'] == "featured")
 				{
 					$feature = "ptp-highlight";
-					$feature_label = '<div class="ptp-most-popular">Most Popular</div>';
+					$feature_label = '<div class="ptp-most-popular" style="border-radius: ' . $meta['rounded-corners'] . ';">Most Popular</div>';
+					
+					$button_style = 'color:' . $meta['featured-button-font-color'] . '!important;background-color:' . $meta['featured-button-color']. ';border-bottom: ' . $meta['featured-button-border-color'] . ' 4px solid!important;';
+					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['featured-button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['featured-button-color'] . '\'" ';
 				}
 				else
 				{
 					$feature = '';	
 			 		$feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
+
+					$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
+					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
 			 	}
 			else
 			{
 				 $feature = '';	
 				 $feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
+
+				$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
+				$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
 			}
 
 			// create the html code
 			$pricing_table_html .= '
 			<div class="ptp-col ' . $number_of_columns . ' '. $feature . '">'
 				. $feature_label .
-				'<ul>
-					<li class="ptp-plan">' . $planname . '</li>
-			  		<li class="ptp-price">' . $planprice . '</li>' 				  
+				'<ul class="ptp-item-container " style="border-radius: ' . $meta['rounded-corners'] . ';">
+					<li class="ptp-plan " style="border-top-right-radius: ' . $meta['rounded-corners'] . '; border-top-left-radius: ' . $meta['rounded-corners'] . ';">' . $planname . '</li>
+			  		<li class="ptp-price ">' . $planprice . '</li>' 				  
 			  		. dh_ptp_features_to_html($planfeatures,$dh_ptp_max_number_of_features) . '
-		  			<li class="ptp-cta"><a class="ptp-button" href="' . $buttonurl . '">' . $buttontext . '</a></li>
+		  			<li class="ptp-cta" style="border-bottom-right-radius: ' . $meta['rounded-corners'] . '; border-bottom-left-radius: ' . $meta['rounded-corners'] . ';">
+		  				<a class="ptp-button " href="' . $buttonurl . '" ' . $button_hover_js . 'style="border-radius: ' . $meta['rounded-corners'] . ';' . $button_style .'">' . $buttontext . '</a>
+		  			</li>
 				</ul>
 			</div>
 			';
@@ -189,15 +215,40 @@ function dh_ptp_features_to_html ($dh_ptp_plan_features, $dh_ptp_max_number_of_f
 		if ($iterator < $this_columns_number_of_features)
 		{
 			if ($dh_ptp_features[$iterator] == "") {
-				$dh_ptp_feature_html .= '<li class="ptp-bullet-item">&nbsp;</li>';
+				$dh_ptp_feature_html .= '<li class="ptp-bullet-item ">&nbsp;</li>';
 			}
 			else
-				$dh_ptp_feature_html .= '<li class="ptp-bullet-item">' . $dh_ptp_features[$iterator] . '</li>';
+				$dh_ptp_feature_html .= '<li class="ptp-bullet-item ">' . $dh_ptp_features[$iterator] . '</li>';
 		}
 		else
-			$dh_ptp_feature_html .= '<li class="ptp-bullet-item">&nbsp;</li>';
+			$dh_ptp_feature_html .= '<li class="ptp-bullet-item ">&nbsp;</li>';
 	}
 
 	// return the features html
 	return $dh_ptp_feature_html;
 }
+
+// Add css to the header!
+function dh_ptp_css_to_head() {
+	//global $meta;
+
+	// 				background-color: ' . $meta['button-color'] .';
+
+	echo '<style type="text/css">
+			.ptp-button{
+				background-color: blue;
+			  	border-bottom: #2980b9 4px solid!important;
+			}
+
+			.ptp-button:hover {
+			  background: #0D2839; 
+			}
+
+			.ptp-highlight .ptp-button {
+			  background-color: red;
+			  border-color: #3B2D3D!important;
+			  color: #333333!important;
+			}
+		 </style>';
+}
+
