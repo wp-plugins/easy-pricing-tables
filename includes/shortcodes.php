@@ -14,7 +14,7 @@ $meta = '';
 function dh_ptp_message_shortcode( $atts) {
 
 	//load shortcode css
-	wp_enqueue_style( 'ptp-styles', plugins_url( 'assets/css/ptp-table-styles.css', dirname(__FILE__) ) );
+	wp_enqueue_style( 'ptp-styles', plugins_url( 'assets/pricing-tables/styles.css', dirname(__FILE__) ) );
 
 
 	//add pricing table css to head

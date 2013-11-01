@@ -138,6 +138,21 @@
   width: 180px;
   float: left;
   margin-right: 10px;
+  cursor: move;
+}
+
+#wpa_loop-column {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction and if we allow the items to wrap */
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: flex-start;
+
+  display: flex;
 }
 
 .column li {
@@ -349,8 +364,8 @@ color:#333;
   padding-left: 10px;
   padding-right: 10px;
 
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  /*border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;*/
   border-top-right-radius: 3px;
 
   margin-top: 0px;
@@ -359,4 +374,36 @@ color:#333;
 .dh_ptp_tab_header{
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+}
+
+/** Fix woothemes incompatibilty caused by jqueryUI tabs */
+#dh_ptp_tabs_container.ui-widget-content{
+  border: none;
+  font-size: 1em;
+  font-family: inherit;
+}
+#dh_ptp_metabox_tabs{
+  border: none;
+}
+.dh_ptp_tab.ui-widget-content{
+  border-color: rgb(221, 221, 221);
+  padding: 10px!important;
+}
+
+/** Styles for save buttons **/
+#ptp-save-buttons{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #D4D4D4;
+  border: 1px solid rgb(221, 221, 221);
+  border-top: none;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* style for move to trash button */
+.dh-ptp-alert{
+  color: white!important;
+  background-image: linear-gradient(to bottom,#e74c3c,#c0392b)!important;
+  text-shadow: none!important;
 }

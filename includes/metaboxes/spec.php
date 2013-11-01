@@ -8,7 +8,7 @@ $features_metabox = new WPAlchemy_MetaBox(array
 (
 	'id' => '1_dh_ptp_settings',
 	'title' => 'Pricing Table Settings',
-	'template' => PTP_PLUGIN_PATH . 'assets/metaboxes/features-meta.php',
+	'template' => PTP_PLUGIN_PATH . 'includes/metaboxes/features-metabox.php',
 	'types' => array('easy-pricing-table'),
     'autosave' => TRUE,
     'priority' => 'high',

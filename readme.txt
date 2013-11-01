@@ -1,12 +1,12 @@
 === Easy Pricing Tables ===
 Contributors: davidhme
-Donate link: http://shoppingcartlabs.com/
+Donate link: http://davidhehenberger.com/
 Tags: pricing table, responsive pricing table, comparison, comparison table, css table, price, price gird, pricing, pricing box, pricing grid, table
-Author URI: http://shoppingcartlabs.com/
+Author URI: http://davidhehenberger.com/
 Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 Requires at least: 3.6
 Tested up to: 3.7
-Stable tag: 1.1.2
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,13 +30,10 @@ This plugin works with any WordPress theme you have installed. After installing 
 *   Featured Column Support
 *   Built-in Conversion Rate Optimization Best Practices
 *	Customize your design with color pickers and rounded borders.
-
-**Coming Soon**
-
 *   Use drag & drop to reorder columns
-*   (Got more ideas? Tell me!)
 
-If you have suggestions for a new add-on, feel free to email me at hi@shoppingcartlabs.com.
+
+If you have suggestions for new features, feel free to email me at hi@shoppingcartlabs.com.
 
 == Installation ==
 
@@ -57,6 +54,12 @@ hi[at]shoppingcartlabs.com
 4. Design options
 
 == Changelog ==
+
+= 1.2 =
+* Added column drag & drop
+* UI improvements
+* Bugfixes
+* Fixed CSS issues on the "Add new pricing tables"-page caused by WooThemes
 
 = 1.1.2 =
 * Fixed bug related to colorpicker introduced with version 1.1.0

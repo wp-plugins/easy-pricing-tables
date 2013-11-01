@@ -25,7 +25,7 @@ function dh_ptp_register_pricing_table_post_type() {
   	$args = array(
 	    'labels' => $labels,
 	    'public' => true,
-	   	'exclude_from_search' => false,
+	   	'exclude_from_search' => true,
 	    'publicly_queryable' => true,
 	    'show_ui' => true, 
 	    'show_in_menu' => true, 
@@ -150,6 +150,15 @@ function dh_ptp_live_preview($content){
 }
 add_filter( 'the_content', 'dh_ptp_live_preview');
 
+/**
+ * Remove the publish metabox for pricing tables
+ * @return [type] [description]
+ */
+function dh_ptp_remove_publish_metabox()
+{
+    remove_meta_box( 'submitdiv', 'easy-pricing-table', 'side' );
+}
+add_action( 'admin_menu', 'dh_ptp_remove_publish_metabox' );
 
 
 
