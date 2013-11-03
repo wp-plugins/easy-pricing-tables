@@ -83,6 +83,18 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
  			case 6:
 	 			$number_of_columns = "six-col";
 	 			break;
+ 			case 7:
+	 			$number_of_columns = "seven-col";
+	 			break;
+ 			case 8:
+	 			$number_of_columns = "eight-col";
+	 			break;
+ 			case 9:
+	 			$number_of_columns = "nine-col";
+	 			break;
+ 			case 10:
+	 			$number_of_columns = "ten-col";
+	 			break;
 			default:
 	 			$number_of_columns = "more-col";
 	 			break;
@@ -108,12 +120,76 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 		}
 
 		/* get all variables from custom settings */
-		/** Settings **/
+		/** 
+		 * Overall Styles *
+		 */
 		// get rounded corner width
 		if(isset($meta['rounded-corners']))
 			$rounded_corner_with = $meta['rounded-corners'];
 		else
 			 $rounded_corner_with = '0px';	
+
+		/**
+		 * Font Styles
+		 */
+		// most popular
+		if(isset($meta['most-popular-font-size']))
+			$most_popular_font_size = $meta['most-popular-font-size'];
+		else
+			$most_popular_font_size = 0.9;
+		if(isset($meta['most-popular-font-size-type']))
+			$most_popular_font_size_type = $meta['most-popular-font-size-type'];
+		else
+			$most_popular_font_size_type = em;
+
+		// plan name
+		if(isset($meta['plan-name-font-size']))
+			$plan_name_font_size = $meta['plan-name-font-size'];
+		else
+			$plan_name_font_size = 1;
+		if(isset($meta['plan-name-font-size-type']))
+			$plan_name_font_size_type = $meta['plan-name-font-size-type'];
+		else
+			$plan_name_font_size_type = em;
+
+		// price
+		if(isset($meta['price-font-size']))
+			$price_font_size = $meta['price-font-size'];
+		else
+			$price_font_size = 1.25;
+		if(isset($meta['price-font-size-type']))
+			$price_font_size_type = $meta['price-font-size-type'];
+		else
+			$price_font_size_type = em;
+
+		// bullet item
+		if(isset($meta['bullet-item-font-size']))
+			$bullet_item_font_size = $meta['bullet-item-font-size'];
+		else
+			$bullet_item_font_size = 0.875;
+		if(isset($meta['bullet-item-font-size-type']))
+			$bullet_item_font_size_type = $meta['bullet-item-font-size-type'];
+		else
+			$price_font_size_type = em;
+
+		// button
+		if(isset($meta['button-font-size']))
+			$button_font_size = $meta['button-font-size'];
+		else
+			$button_font_size = 1;
+		if(isset($meta['button-font-size-type']))
+			$button_font_size_type = $meta['button-font-size-type'];
+		else
+			$button_font_size_type = em;
+
+		/**
+		 * Button Colors
+		 */
+		// get featured button font color
+		if(isset($meta['featured-button-font-color']))
+			$featured_button_font_color = $meta['featured-button-font-color'];
+		else
+			$featured_button_font_color = '#ffffff';
 
 		// get featured button font color
 		if(isset($meta['featured-button-font-color']))
@@ -204,14 +280,10 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 				if ($column['feature'] == "featured")
 				{
 					$feature = "ptp-highlight";
-					$feature_label = '<div class="ptp-most-popular" style="border-radius: ' . $meta['rounded-corners'] . ';">Most Popular</div>';
+					$feature_label = '<div class="ptp-most-popular" style="border-radius: ' . $meta['rounded-corners'] . '; font-size: ' . $most_popular_font_size . $most_popular_font_size_type . ';">Most Popular</div>';
 					
-					//$button_style = 'color:' . $meta['featured-button-font-color'] . '!important;background-color:' . $meta['featured-button-color']. ';border-bottom: ' . $meta['featured-button-border-color'] . ' 4px solid!important;';
-					//$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['featured-button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['featured-button-color'] . '\'" ';
-					// isset doesnt seem to work!!!
 					$button_style = 'color:' . $featured_button_font_color . '!important;background-color:' . $featured_button_color . ';border-bottom: ' . $featured_button_border_color . ' 4px solid!important;';
 					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $featured_button_hover_color . '\'" onMouseOut = "this.style.backgroundColor=\'' . $featured_button_color . '\'" ';
-				
 				}
 				else
 				{
@@ -220,23 +292,14 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 
 			 		$button_style = 'color:' . $button_font_color . '!important;background-color:' . $button_color . ';border-bottom: ' . $button_border_color . ' 4px solid!important;';
 					$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $button_hover_color . '\'" onMouseOut = "this.style.backgroundColor=\'' . $button_color . '\'" ';
-			
-
-					//$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
-					//$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
-			 	}
+				}
 			else
 			{
-				 $feature = '';	
-				 $feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
-
+				$feature = '';	
+				$feature_label = '<div class="ptp-not-most-popular">&nbsp;</div>';
 
 				$button_style = 'color:' . $button_font_color . '!important;background-color:' . $button_color . ';border-bottom: ' . $button_border_color . ' 4px solid!important;';
 				$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $button_hover_color . '\'" onMouseOut = "this.style.backgroundColor=\'' . $button_color . '\'" ';
-			
-
-				//$button_style = 'color:' . $meta['button-font-color'] . '!important;background-color:' . $meta['button-color']. ';border-bottom: ' . $meta['button-border-color'] . ' 4px solid!important;';
-				//$button_hover_js = 'onMouseOver = "this.style.backgroundColor=\'' . $meta['button-hover-color'] . '\'" onMouseOut = "this.style.backgroundColor=\'' . $meta['button-color'] . '\'" ';
 			}
 
 			// create the html code
@@ -244,11 +307,11 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
 			<div class="ptp-col ' . $number_of_columns . ' '. $feature . '">'
 				. $feature_label .
 				'<ul class="ptp-item-container " style="border-radius: ' . $meta['rounded-corners'] . ';">
-					<li class="ptp-plan " style="border-top-right-radius: ' . $meta['rounded-corners'] . '; border-top-left-radius: ' . $meta['rounded-corners'] . ';">' . $planname . '</li>
-			  		<li class="ptp-price ">' . $planprice . '</li>' 				  
-			  		. dh_ptp_features_to_html($planfeatures,$dh_ptp_max_number_of_features) . '
+					<li class="ptp-plan " style="border-top-right-radius: ' . $meta['rounded-corners'] . '; border-top-left-radius: ' . $meta['rounded-corners'] . '; font-size: ' . $plan_name_font_size . $plan_name_font_size_type . ';">' . $planname . '</li>
+			  		<li class="ptp-price " style="font-size: ' . $price_font_size . $price_font_size_type . ';">' . $planprice . '</li>' 				  
+			  		. dh_ptp_features_to_html($planfeatures,$dh_ptp_max_number_of_features, 'font-size: ' . $bullet_item_font_size . $bullet_item_font_size_type .';') . '
 		  			<li class="ptp-cta" style="border-bottom-right-radius: ' . $meta['rounded-corners'] . '; border-bottom-left-radius: ' . $meta['rounded-corners'] . ';">
-		  				<a class="ptp-button " href="' . $buttonurl . '" ' . $button_hover_js . 'style="border-radius: ' . $meta['rounded-corners'] . ';' . $button_style .'">' . $buttontext . '</a>
+		  				<a class="ptp-button " href="' . $buttonurl . '" ' . $button_hover_js . 'style="border-radius: ' . $meta['rounded-corners'] . '; font-size: ' . $button_font_size . $button_font_size_type . '; ' . $button_style .'">' . $buttontext . '</a>
 		  			</li>
 				</ul>
 			</div>
@@ -269,7 +332,7 @@ function dh_ptp_generate_pricing_table_html ($dh_ptp_pricing_table_id) {
  * @param  [type] $dh_ptp_plan_features [description]
  * @return [type]                       [description]
  */
-function dh_ptp_features_to_html ($dh_ptp_plan_features, $dh_ptp_max_number_of_features){
+function dh_ptp_features_to_html ($dh_ptp_plan_features, $dh_ptp_max_number_of_features, $bullet_item_style){
 
 	// the string to be returned
 	$dh_ptp_feature_html = "";
@@ -289,7 +352,7 @@ function dh_ptp_features_to_html ($dh_ptp_plan_features, $dh_ptp_max_number_of_f
 				$dh_ptp_feature_html .= '<li class="ptp-bullet-item ">&nbsp;</li>';
 			}
 			else
-				$dh_ptp_feature_html .= '<li class="ptp-bullet-item ">' . $dh_ptp_features[$iterator] . '</li>';
+				$dh_ptp_feature_html .= '<li class="ptp-bullet-item " style="' . $bullet_item_style . '">' . $dh_ptp_features[$iterator] . '</li>';
 		}
 		else
 			$dh_ptp_feature_html .= '<li class="ptp-bullet-item ">&nbsp;</li>';

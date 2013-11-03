@@ -51,6 +51,22 @@ list-style: none;
   width: 15.5%;
 }
 
+.seven-col {
+  width: 13.29%;
+}
+
+.eight-col {
+  width: 11.625%;
+}
+
+.nine-col {
+  width: 10.3%;
+}
+
+.ten-col {
+  width: 9.3%;
+}
+
 .more-col {
   width: auto;
 }
@@ -189,12 +205,12 @@ transition: background-color 300ms ease-out;
 
 }
 
-/* tablet in horizontal mode, small laptop / desktop */
-@media only screen and (min-width: 980px) and (max-width: 1200px) {
+/* tablet in vertical mode or horizontal mode, small laptop / desktop */
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
 }
 
-/* smart phones and tablets in horizontal mode */
-@media only screen and (max-width: 979px) {
+/* smart phones */
+@media only screen and (max-width: 765px) {
   .ptp-col {
     width: 100%;
   }
@@ -203,31 +219,3 @@ transition: background-color 300ms ease-out;
     white-space: normal;
   }
 }
-
-
-/** customizeable UI **
-.ptp-most-popular{
-  border-radius: 5px;
-}
-.ptp-item-container{
-  border-radius: 5px;
-}
-.ptp-button{
-  border-radius: 5px;
-}
-.ptp-button{
-  color: white!important;
-  background-color: #3498db;
-  border-bottom: #2980b9 4px solid!important;
-}
-.ptp-button:hover {
-  background: #2980b9; 
-}
-.ptp-highlight .ptp-button{
-  color: white!important;
-  background-color: #e74c3c;
-  border-bottom: #c0392b 4px solid!important;
-}
-.ptp-highlight .ptp-button:hover{
-  background: #c0392b;
-}*/

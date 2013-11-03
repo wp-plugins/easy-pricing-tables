@@ -24,7 +24,7 @@ function dh_ptp_register_pricing_table_post_type() {
 
   	$args = array(
 	    'labels' => $labels,
-	    'public' => true,
+	    'public' => false,
 	   	'exclude_from_search' => true,
 	    'publicly_queryable' => true,
 	    'show_ui' => true, 
@@ -57,16 +57,17 @@ function dh_ptp_updated_interaction_messages( $messages ) {
 	global $post, $post_ID;
 	$messages['easy-pricing-table'] = array(
 		0 => '', 
-		1 => sprintf( __('Pricing table updated. <a href="%s">View pricing table</a>'), esc_url( get_permalink($post_ID) ) ),
+		1 => sprintf( __('Pricing table saved. <a href="%s">View pricing table</a>.'), esc_url( get_permalink($post_ID) ) ),
 		2 => __('Custom field updated.'),
 		3 => __('Custom field deleted.'),
-		4 => __('Pricing table updated.'),
+		4 => __('Pricing table saved.'),
 		5 => isset($_GET['revision']) ? sprintf( __('Pricing table restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-		6 => sprintf( __('Pricing table published. <a href="%s">View pricing table</a>'), esc_url( get_permalink($post_ID) ) ),
+		6 => sprintf( __('Pricing table saved. <a href="%s">View pricing table</a>'), esc_url( get_permalink($post_ID) ) ),
 		7 => __('Pricing table saved.'),
-		8 => sprintf( __('Pricing table submitted. <a target="_blank" href="%s">Preview pricing table</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-		9 => sprintf( __('Pricing table scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview pricing table</a>'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-		10 => sprintf( __('Pricing table updated. <a target="_blank" href="%s">Preview pricing table</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+		//8 => sprintf( __('Pricing table submitted. <a target="_blank" href="%s">Preview pricing table</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+		8 => sprintf( __('Pricing table submitted.') ),
+		9 => sprintf( __('Pricing table scheduled for: <strong>%1$s</strong>.'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+		10 => sprintf( __('Pricing table saved.' ) ),
 	);
 	return $messages;
 }

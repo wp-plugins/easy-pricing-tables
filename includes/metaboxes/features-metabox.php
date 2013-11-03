@@ -110,145 +110,370 @@
 	       	</div>
 
 	       	<div id="dh_ptp_tabs_2" class="dh_ptp_tab">
-		       	<h4>Design</h4>
+		       	<div id="dh_ptp_design_tabs_container">
+	       			<ul id="dh_ptp_design_tabs">
+					    <li class="dh_ptp_tab_header"><a href="#designtabs1">Overall Styles</a></li>
+					    <li class="dh_ptp_tab_header"><a href="#designtabs2">Font Styles</a></li>
+					    <li class="dh_ptp_tab_header"><a href="#designtabs3">Button Colors</a></li>
+				    </ul>	
+		    	    <!-- clear our floats -->
+       				<div class="clear"></div>
 
-		       	<table>
+			       	<div id="designtabs1" class="dh_ptp_tab">
+   				       	<h4>Overall Design</h4>
+			       		<table>
+				       		<! -- Rounded Corners -->
+				       		<tr class="table-headline"><td><br/>Rounded Corners</td></tr>
+					       	<tr>
+					       		<td>Border Radius</td>
+					        	<?php $mb->the_field('rounded-corners'); ?>
+					        	<td><select name="<?php $metabox->the_name(); ?>">
+									<option value="0px" <?php  
+										if(!is_null($mb->get_the_value())) 
+										{
+							            	if($mb->get_the_value() == '0px')
+							            	{
+												echo 'selected';
+							            	}
+						            	}
+						            	else {
+						            		echo 'selected';
+						            	}
+									?> >No Rounded Corners</option>
+									<?php
+										for($i=1;$i<=20;++$i){
 
-	       		<! -- Rounded Corners -->
-	       		<tr class="table-headline"><td><br/>Rounded Corners</td></tr>
-		       	<tr>
-		       		<td>Border Radius</td>
-		        	<?php $mb->the_field('rounded-corners'); ?>
-		        	<td><select name="<?php $metabox->the_name(); ?>">
-						<option value="0px" <?php  
-							if(!is_null($mb->get_the_value())) 
-							{
-				            	if($mb->get_the_value() == '0px')
-				            	{
-									echo 'selected';
-				            	}
-			            	}
-			            	else {
-			            		echo 'selected';
-			            	}
-						?> >No Rounded Corners</option>
-						<?php
-							for($i=1;$i<=20;++$i){
+							            	if($mb->get_the_value() == $i . 'px')
+							            	{
+												echo '<option value="' . $i . 'px" selected>' . $i . 'px</option>';
+							            	}
+					            	 		else
+												echo '<option value="' . $i . 'px" >' . $i . 'px</option>';
 
-				            	if($mb->get_the_value() == $i . 'px')
-				            	{
-									echo '<option value="' . $i . 'px" selected>' . $i . 'px</option>';
-				            	}
-		            	 		else
-									echo '<option value="' . $i . 'px" >' . $i . 'px</option>';
+										}
+									?>
+								</select></td>
+					       	</tr>
+					       	<!-- commented out for now
+				       		<tr class="table-headline"><td><br/>"Most Popular Area" Colors</td></tr>
+					       	<tr>
+					       		<td>Most Popular - Area Background Color</td>
+					        	<?php $mb->the_field('most-popular-background-color'); ?>
+					       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php 
+								            if(!is_null($mb->get_the_value())) 
+								            	echo $mb->the_value();
+					            	 		else
+					            	 			echo "#7f8c8d";
+								            ?>
+					       			" class="my-color-field" data-default-color="#7f8c8d" /></td>
+					       	</tr>
+					       	<tr>
+					       		<td>Most Popular - Font Color</td>
+					        	<?php $mb->the_field('most-popular-font-color'); ?>
+					       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php 
+								            if(!is_null($mb->get_the_value())) 
+								            	echo $mb->the_value();
+					            	 		else
+					            	 			echo "#ffffff";
+								            ?>
+					       			" class="my-color-field" data-default-color="#ffffff" /></td>
+					       	</tr>
+					       	<tr class="table-headline"><td><br/>Table Colors</td></tr>
+					       	<tr>
+					       		<td>Most Popular - Area Background Color</td>
+					        	<?php $mb->the_field('most-popular-background-color'); ?>
+					       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php 
+								            if(!is_null($mb->get_the_value())) 
+								            	echo $mb->the_value();
+					            	 		else
+					            	 			echo "#7f8c8d";
+								            ?>
+					       			" class="my-color-field" data-default-color="#7f8c8d" /></td>
+					       	</tr>
+					       -->
+				        </table>
+			        </div>
+		       		
+		       		<div id="designtabs2" class="dh_ptp_tab">
+		       			<h4>Font Styles</h4>
+			       		<table>
 
-							}
-						?>
-					</select></td>
-		       	</tr>
+					       	<table>
+			       			<tr>
+					       		<td>"Most Popular" Font Size</td>
+					        	<td>
+						        	<?php $mb->the_field('most-popular-font-size'); ?>
+					        		<input class="form-control float-input" type="text" name="<?php $metabox->the_name(); ?>" value="<?php if(!is_null($mb->get_the_value())) echo $metabox->the_value(); else echo "0.9"; ?>"/>
+								</td>
+								<td>
+									<?php $mb->the_field('most-popular-font-size-type'); ?>
+									<select  name="<?php $metabox->the_name(); ?>">
+										<option value="em" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'em')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+							            	else {
+							            		echo 'selected';
+							            	}
+										?> >em</option>
+										<option value="px" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'px')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+										?>>px</option>
+									</select>
+								</td>
+					       	</tr>
+					       	<tr>
+					       		<td>"Plan Name" Font Size</td>
+					        	<td>
+						        	<?php $mb->the_field('plan-name-font-size'); ?>
+					        		<input class="form-control float-input" type="text" name="<?php $metabox->the_name(); ?>" value="<?php if(!is_null($mb->get_the_value())) echo $metabox->the_value(); else echo "1"; ?>"/>
+								</td>
+								<td>
+									<?php $mb->the_field('plan-name-font-size-type'); ?>
+									<select  name="<?php $metabox->the_name(); ?>">
+										<option value="em" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'em')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+							            	else {
+							            		echo 'selected';
+							            	}
+										?> >em</option>
+										<option value="px" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'px')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+										?>>px</option>
+									</select>
+								</td>
+					       	</tr>
+					       	<tr>
+					       		<td>"Price" Font Size</td>
+					        	<td>
+						        	<?php $mb->the_field('price-font-size'); ?>
+					        		<input class="form-control float-input" type="text" name="<?php $metabox->the_name(); ?>" value="<?php if(!is_null($mb->get_the_value())) echo $metabox->the_value(); else echo "1.25"; ?>"/>
+								</td>
+								<td>
+									<?php $mb->the_field('price-font-size-type'); ?>
+									<select  name="<?php $metabox->the_name(); ?>">
+										<option value="em" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'em')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+							            	else {
+							            		echo 'selected';
+							            	}
+										?> >em</option>
+										<option value="px" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'px')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+										?>>px</option>
+									</select>
+								</td>
+					       	</tr>
+					       	<tr>
+					       		<td>"Bullet Item (Feature)" Font Size</td>
+					        	<td>
+						        	<?php $mb->the_field('bullet-item-font-size'); ?>
+					        		<input class="form-control float-input" type="text" name="<?php $metabox->the_name(); ?>" value="<?php if(!is_null($mb->get_the_value())) echo $metabox->the_value(); else echo "0.875"; ?>"/>
+								</td>
+								<td>
+									<?php $mb->the_field('bullet-item-font-size-type'); ?>
+									<select  name="<?php $metabox->the_name(); ?>">
+										<option value="em" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'em')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+							            	else {
+							            		echo 'selected';
+							            	}
+										?> >em</option>
+										<option value="px" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'px')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+										?>>px</option>
+									</select>
+								</td>
+					       	</tr>
+					       	<tr>
+					       		<td>"Button" Font Size</td>
+					        	<td>
+						        	<?php $mb->the_field('button-font-size'); ?>
+					        		<input class="form-control float-input" type="text" name="<?php $metabox->the_name(); ?>" value="<?php if(!is_null($mb->get_the_value())) echo $metabox->the_value(); else echo "1"; ?>"/>
+								</td>
+								<td>
+									<?php $mb->the_field('button-font-size-type'); ?>
+									<select  name="<?php $metabox->the_name(); ?>">
+										<option value="em" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'em')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+							            	else {
+							            		echo 'selected';
+							            	}
+										?> >em</option>
+										<option value="px" <?php  
+											if(!is_null($mb->get_the_value())) 
+											{
+								            	if($mb->get_the_value() == 'px')
+								            	{
+													echo 'selected';
+								            	}
+							            	}
+										?>>px</option>
+									</select>
+								</td>
+					       	</tr>
+				        </table>
 
-	       		
-	       		<!-- Normal Buttons -->
-		       	<tr class="table-headline"><td><br/>Button Color</td></tr>
-		       	<tr>
-		       		<td>Button Color</td>
-		        	<?php $mb->the_field('button-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#3498db";
-					            ?>
-		       			" class="my-color-field form-control" data-default-color="#3498db" /></td>
-		       	</tr>
+		       		</div>
 
-		       	<tr>
-		       		<td>Button Border Color</td>
-		        	<?php $mb->the_field('button-border-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#2980b9";
-					            ?>
-		       			" class="my-color-field" data-default-color="#2980b9" /></td>
-		       	</tr>
+		       		<div id="designtabs3" class="dh_ptp_tab">
+	       				<h4>Button Colors</h4>
+		       			<table>
+			       		<!-- Normal Buttons -->
+				       	<tr class="table-headline"><td><br/>Button Color</td></tr>
+				       	<tr>
+				       		<td>Button Color</td>
+				        	<?php $mb->the_field('button-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#3498db";
+							            ?>
+				       			" class="my-color-field form-control" data-default-color="#3498db" /></td>
+				       	</tr>
 
-		       	<tr>
-		       		<td>Button Hover Color</td>
-		        	<?php $mb->the_field('button-hover-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#2980b9";
-					            ?>
-		       			" class="my-color-field" data-default-color="#2980b9" /></td>
-		       	</tr>
+				       	<tr>
+				       		<td>Button Border Color</td>
+				        	<?php $mb->the_field('button-border-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#2980b9";
+							            ?>
+				       			" class="my-color-field" data-default-color="#2980b9" /></td>
+				       	</tr>
 
-				<tr>
-		       		<td>Button Font Color</td>
-		        	<?php $mb->the_field('button-font-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-font-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#ffffff";
-					            ?>
-		       			" class="my-color-field" data-default-color="#ffffff" /></td>
-		       	</tr>
+				       	<tr>
+				       		<td>Button Hover Color</td>
+				        	<?php $mb->the_field('button-hover-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#2980b9";
+							            ?>
+				       			" class="my-color-field" data-default-color="#2980b9" /></td>
+				       	</tr>
 
-		       	<!-- Featured Buttons -->
-		       	<tr class="table-headline"><td><br/>Button Color (Endorsed Column)</td></tr>
-	       		<tr>
-		       		<td>Endorsed-Button Color</td>
-		        	<?php $mb->the_field('featured-button-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#e74c3c";
-					            ?>
-		       			" class="my-color-field form-control" data-default-color="#e74c3c" /></td>
-		       	</tr>
+						<tr>
+				       		<td>Button Font Color</td>
+				        	<?php $mb->the_field('button-font-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#ffffff";
+							            ?>
+				       			" class="my-color-field" data-default-color="#ffffff" /></td>
+				       	</tr>
 
-		       	<tr>
-		       		<td>Endorsed-Button Border Color</td>
-		        	<?php $mb->the_field('featured-button-border-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#c0392b";
-					            ?>
-		       			" class="my-color-field" data-default-color="#c0392b" /></td>
-		       	</tr>
+				       	<!-- Featured Buttons -->
+				       	<tr class="table-headline"><td><br/>Button Color (Featured Column)</td></tr>
+			       		<tr>
+				       		<td>Featured-Button Color</td>
+				        	<?php $mb->the_field('featured-button-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#e74c3c";
+							            ?>
+				       			" class="my-color-field form-control" data-default-color="#e74c3c" /></td>
+				       	</tr>
 
-		       	<tr>
-		       		<td>Endorsed-Button Hover Color</td>
-		        	<?php $mb->the_field('featured-button-hover-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#c0392b";
-					            ?>
-		       			" class="my-color-field" data-default-color="#c0392b" /></td>
-		       	</tr>
+				       	<tr>
+				       		<td>Featured-Button Border Color</td>
+				        	<?php $mb->the_field('featured-button-border-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#c0392b";
+							            ?>
+				       			" class="my-color-field" data-default-color="#c0392b" /></td>
+				       	</tr>
 
-				<tr>
-		       		<td>Endorsed-Button Font Color</td>
-		        	<?php $mb->the_field('featured-button-font-color'); ?>
-		       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-font-color" value="<?php 
-					            if(!is_null($mb->get_the_value())) 
-					            	echo $mb->the_value();
-		            	 		else
-		            	 			echo "#ffffff";
-					            ?>
-		       			" class="my-color-field" data-default-color="#ffffff" /></td>
-		       	</tr>
+				       	<tr>
+				       		<td>Featured-Button Hover Color</td>
+				        	<?php $mb->the_field('featured-button-hover-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#c0392b";
+							            ?>
+				       			" class="my-color-field" data-default-color="#c0392b" /></td>
+				       	</tr>
 
-		       	</table>
+						<tr>
+				       		<td>Featured-Button Font Color</td>
+				        	<?php $mb->the_field('featured-button-font-color'); ?>
+				       		<td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php 
+							            if(!is_null($mb->get_the_value())) 
+							            	echo $mb->the_value();
+				            	 		else
+				            	 			echo "#ffffff";
+							            ?>
+				       			" class="my-color-field" data-default-color="#ffffff" /></td>
+				       	</tr>
+
+			       	</table>
+		       		</div>
+	       		</div>
 
 	       	</div>
 
@@ -259,14 +484,14 @@
 				<input type="text" readonly="readonly" onclick="this.select()" value="[easy-pricing-table id=&quot;<?php the_ID(); ?>&quot;]"/>
 
 				<h4>Support</h4>
-				<p>Feature requests? Questions? Problems? Email me at <a href="mailto:hi@shoppingcartlabs.com" target="_top">hi@shoppingcartlabs.com</a>.</p>
+				<p>Feature requests? Questions? Problems? Email me at <a href="mailto:david@davidhehenberger.com" target="_top">david@davidhehenberger.com</a>.</p>
 			</div>
 
 			
 			<div id="ptp-save-buttons">
 				<div style="margin-left:10px;margin-right:10px;">
 					<input style="float:left; " name="save" type="submit" class="button button-primary button-large" id="publish" accesskey="p" value="Save Settings">
-					<a  style="float:left; margin-left:10px;" class="button button-large" href="<?php echo esc_url( get_permalink($post->ID) ); ?>" target="blank" >View Pricing Table</a>
+					<a  style="float:left; margin-left:10px;" class="button button-large" href="<?php echo esc_url( get_permalink($post->ID) ); ?>" target="_blank" >View Pricing Table</a>
 					<?php
 						if ( current_user_can( "delete_post", $post->ID ) ) {
 						        if ( !EMPTY_TRASH_DAYS )

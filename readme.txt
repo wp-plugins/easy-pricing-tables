@@ -5,8 +5,8 @@ Tags: pricing table, responsive pricing table, comparison, comparison table, css
 Author URI: http://davidhehenberger.com/
 Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 Requires at least: 3.6
-Tested up to: 3.7
-Stable tag: 1.2.1
+Tested up to: 3.7.1
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,12 +26,11 @@ This plugin works with any WordPress theme you have installed. After installing 
 *   Works with any WordPress Theme
 *   Responsive Pricing Tables
 *   Intuitive User Interface
-*   Create Unlimited Rows and Columns
-*   Featured Column Support
 *   Built-in Conversion Rate Optimization Best Practices
-*	Customize your design with color pickers and rounded borders.
+*   Create Unlimited Rows and Columns
+*	Customize your design: font-size, color pickers and rounded borders.
 *   Use drag & drop to reorder columns
-
+*   Featured Your Most Popular Column
 
 If you have suggestions for new features, feel free to email me at hi@shoppingcartlabs.com.
 
@@ -45,7 +44,7 @@ If you have suggestions for new features, feel free to email me at hi@shoppingca
 
 = Contact me if you have any questions: =
 
-hi[at]shoppingcartlabs.com
+david[at]davidhehenberger[dot]com
 
 == Screenshots ==
 1. Example of a pricing table with 3 columns
@@ -54,6 +53,13 @@ hi[at]shoppingcartlabs.com
 4. Design options
 
 == Changelog ==
+
+= 1.3 =
+* Fixed incompatibility with s2 Member plugin
+* Added font-size options
+* Changed post-type 'public' => false
+* Minor bugfixes
+* Minor UI improvements
 
 = 1.2.1 =
 * Bugfix
