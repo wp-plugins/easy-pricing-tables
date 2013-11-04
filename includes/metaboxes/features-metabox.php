@@ -110,6 +110,8 @@
 	       	</div>
 
 	       	<div id="dh_ptp_tabs_2" class="dh_ptp_tab">
+	       		<div>Want more design options? <a href="http://davidhehenberger.com/easy-pricing-tables-premium/?utm_source=easy-pricing-tables-free&utm_medium=plugin-ad&utm_campaign=easy-pricing-tables-premium
+" target="_blank">Check out Easy Pricing Tables Premium</a>.</div>
 		       	<div id="dh_ptp_design_tabs_container">
 	       			<ul id="dh_ptp_design_tabs">
 					    <li class="dh_ptp_tab_header"><a href="#designtabs1">Overall Styles</a></li>
