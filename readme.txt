@@ -6,7 +6,7 @@ Author URI: http://davidhehenberger.com/
 Plugin URI: http://wordpress.org/plugins/easy-pricing-tables/
 Requires at least: 3.6
 Tested up to: 3.7.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,12 @@ david[at]davidhehenberger[dot]com
 4. Design options
 
 == Changelog ==
+
+= 1.3.2 =
+* Improved CSS to cause less theme conflicts
+* Various bugfixes
+* Refactored table generation code
+* UI improvements
 
 = 1.3.1 =
 * Minor Improvements

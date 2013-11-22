@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     //nested tabs (design)
-    $("#dh_ptp_design_tabs_container").tabs();
+    //$("#dh_ptp_design_tabs_container").tabs();
     //activate jquery ui tabs
     $("#dh_ptp_tabs_container").tabs();
 
@@ -25,6 +25,9 @@ jQuery(document).ready(function($) {
 	        event.preventDefault();
 	      } 
 	});
+
+    //enable lightbox
+    $(".inline-lightbox").colorbox({inline:true, width:"50%", speed: 0, fadeOut: 0});
 
 });
 
@@ -80,22 +83,88 @@ function buttonHandler(el)
  	return false;
 }
 
-// validate font size field
-function validateFontSize(el){
+
+// handle clicks on featured button
+function templateSelectorClickedHandler(el)
+{
 	// required for wordpress
 	var $ = jQuery;
 
-	// http://stackoverflow.com/questions/10104755/string-validation-in-jquery
-	// http://stackoverflow.com/questions/6029674/regex-for-positive-float-numbers
-	if (/your regex/.test($(el).val()))
+	// toggle active button via css
+	function toggleButtonClasses(el)
 	{
-	    // if regex pattern match => do nothing
+		$(el).toggleClass('template-selected');
 	}
-	else
+	
+	//toggle the value of our hidden input
+	function setInputValue(el)
 	{
-	    // else alert + put value back to previous
-		alert($(el).val());
+		if($(el).val()=="not-selected" || $(el).val()=="")
+			$(el).val("selected");
+		else if($(el).val()=="selected")
+			$(el).val("not-selected");
+	}
+
+	// toggles the elements class and value
+	function myButtonClickHandler(el)
+	{
+		
+		toggleButtonClasses(el);
+		setInputValue(el.find('.template-hidden-input'));
+
+		//change visibility of advanced design settings
+		setAdvancedDesignSettingsVisibility(el);
+
+
+		//changeButtonText(el.find('.template-button'));
+
+	}
+
+	//toggle button text - disabled for now
+	/*
+	function changeButtonText(el)
+	{
+		if($(el).text()=="Use This Template")
+			$(el).text("In Use");
+		else if($(el).text == "In Use")
+			$(el).text("Use This Template");
+	}*/
+
+	// use hasClass to figure out if current item is selected or not
+	if (!$(el).parent().hasClass('template-selected')) {
+		// if the clicked item is not featured, unfeature the currently featured item ('.ptp-icon-star') by sending it to myButtonClickHandler
+		myButtonClickHandler($('.template-selected'));
+
+		//now feature the current item
+		myButtonClickHandler( $(el).parent());
+
 	}
 
 	return false;
+}
+
+//set settings visibility 
+function setAdvancedDesignSettingsVisibility(el)
+{
+	// required for wordpress
+	var $ = jQuery;
+
+	if ($(el).attr('id') == "simple-flat-selector")
+	{
+		$('#simple-flat-advanced-design-settings').show();
+		$('#fancy-flat-advanced-design-settings').hide();
+		$('#stylish-flat-advanced-design-settings').hide();
+	}
+	else if ($(el).attr('id') == "fancy-flat-selector")
+	{
+		$('#simple-flat-advanced-design-settings').hide();
+		$('#fancy-flat-advanced-design-settings').show();
+		$('#stylish-flat-advanced-design-settings').hide();
+	}
+	else if ($(el).attr('id') == "stylish-flat-selector")
+	{
+		$('#simple-flat-advanced-design-settings').hide();
+		$('#fancy-flat-advanced-design-settings').hide();
+		$('#stylish-flat-advanced-design-settings').show();
+	}
 }

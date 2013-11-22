@@ -101,7 +101,7 @@ function dh_ptp_custom_rewrites($translation, $text, $domain) {
 
 
 /**
- * Customize pricing table overview tables
+ * Customize pricing table overview tables ("Pricing Tables" -> "All Pricing Tables")
  * Add / modify columns at pricing table edit overview
  * @param  [type] $gallery_columns [description]
  * @return [type]                  [description]
@@ -116,7 +116,6 @@ function dh_ptp_add_new_pricing_table_columns($gallery_columns) {
 }
 // Add to admin_init function
 add_filter('manage_edit-easy-pricing-table_columns', 'dh_ptp_add_new_pricing_table_columns');
-
 function dh_ptp_manage_pricing_table_columns($column_name, $id) {
     global $wpdb;
 
@@ -134,7 +133,8 @@ add_action('manage_easy-pricing-table_posts_custom_column', 'dh_ptp_manage_prici
 
 
 /**
- * Live preview functionality.
+ * Preview functionality.
+(Append the pricing table shortcode to the empty post.)
  * @param  [type] $content [description]
  * @return [type]          [description]
  */
