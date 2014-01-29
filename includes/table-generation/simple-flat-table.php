@@ -68,7 +68,7 @@ function dh_ptp_simple_flat_css($id, $meta)
     
     #ptp-<?php echo $id ?> ul li {list-style-type: none;}
     #ptp-<?php echo $id ?> ul.ptp-item-container {
-        border-radius: <?php echo $rounded_corner_width; ?>;";
+        border-radius: <?php echo $rounded_corner_width; ?>;
         padding: 0px;
         margin-left: 0px;
         margin-right: 0px;
@@ -95,6 +95,7 @@ function dh_ptp_simple_flat_css($id, $meta)
         color: <?php echo $button_font_color; ?>;
         background-color: <?php echo $button_color; ?>;
         border-bottom: <?php echo $button_border_color;?> 4px solid;
+        margin: 0 0 1.25em;
     }
     #ptp-<?php echo $id ?> a.ptp-button:hover{
         background-color: <?php echo $button_hover_color; ?>
@@ -112,8 +113,8 @@ function dh_ptp_simple_flat_css($id, $meta)
         font-size: <?php echo $bullet_item_font_size.$bullet_item_font_size_type; ?>;
     }
     #ptp-<?php echo $id ?> div.ptp-most-popular{
-        border-radius: <?php echo $rounded_corner_width; ?>;"
-    font-size: <?php echo $most_popular_font_size.$most_popular_font_size_type; ?>;
+        border-radius: <?php echo $rounded_corner_width; ?>;
+        font-size: <?php echo $most_popular_font_size.$most_popular_font_size_type; ?>;
     }
     <?php
 }
@@ -291,13 +292,13 @@ function dh_ptp_features_to_html_simple_flat ($dh_ptp_plan_features, $dh_ptp_max
         if ($iterator < $this_columns_number_of_features)
         {
             if ($dh_ptp_features[$iterator] == "") {
-                $dh_ptp_feature_html .= '<li class="ptp-bullet-item ">&nbsp;</li>';
+                $dh_ptp_feature_html .= '<li class="ptp-bullet-item ptp-row-id-'.$iterator.'">&nbsp;</li>';
             }
             else
-                $dh_ptp_feature_html .= '<li class="ptp-bullet-item">' . $dh_ptp_features[$iterator] . '</li>';
+                $dh_ptp_feature_html .= '<li class="ptp-bullet-item ptp-row-id-'.$iterator.'">' . $dh_ptp_features[$iterator] . '</li>';
+        } else {
+            $dh_ptp_feature_html .= '<li class="ptp-bullet-item ptp-row-id-'.$iterator.'">&nbsp;</li>';
         }
-        else
-            $dh_ptp_feature_html .= '<li class="ptp-bullet-item ">&nbsp;</li>';
     }
 
     // return the features html
