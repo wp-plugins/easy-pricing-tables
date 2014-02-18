@@ -31,7 +31,45 @@ jQuery(document).ready(function($) {
 
     //enable lightbox
     $(".inline-lightbox").colorbox({inline:true, width:"50%", speed: 0, fadeOut: 0});
+	
+	// Save & Preview button
+	$('#save_preview').on('click', function(event) {
+        event.preventDefault();
+		
+		// Add target
+		var form = $(this).closest('form');
+		form.prop('target', '_blank');
+		
+		// Add preview_url parameter
+		var url = $(this).attr('data-url');
+		if ($('#dh_ptp_preview_url')) {
+			$('#dh_ptp_preview_url').remove();
+		}
+		var preview_url_input = '<input type="hidden" name="dh_ptp_preview_url" id="dh_ptp_preview_url" value="' + url + '"/>';
+		$(this).after(preview_url_input);
+		
+		// Submit form
+		form.submit();
+		  
+        return false;
+	});
+	
+	$('#save').on('click', function(event) {
+        event.preventDefault();
+		
+		console.log('test');
+		// Add target
+		var form = $(this).closest('form');
+		form.removeAttr('target');
 
+		// Remove preview url
+		$('#dh_ptp_preview_url').remove();
+		
+		// Submit form
+		form.submit();
+		  
+        return false;
+	});
 });
 
 //activate twitter bootstrap popover
