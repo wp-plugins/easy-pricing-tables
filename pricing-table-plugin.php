@@ -4,17 +4,21 @@
 	Plugin URI: http://easypricingtables.com/
 	Description: Create a Beautiful, Responsive and Highly Converting Pricing Table in Less Than 5 Minutes with Easy Pricing Tables for WordPress. No Coding Required.
 	Author: David Hehenberger
-	Version: 1.5.0.1
+	Version: 1.5.0.2
 	Author URI: http://davidhehenberger.com
 */
 
 // define plugin version for update nag
-define('PTP_PLUGIN_VERSION', '1.5.0.1');
+define('PTP_PLUGIN_VERSION', '1.5.0.2');
 
 // Define a constant to always include the absolute path
 define('PTP_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
 define('PTP_PLUGIN_PATH_FOR_SUBDIRS', plugins_url(str_replace(dirname(dirname(__FILE__)), '', dirname(__FILE__))));
 define('PTP_LOC', 'easy-pricing-tables');
+
+// Analytics
+include_once PTP_PLUGIN_PATH . 'includes/analytics.php';
+include_once PTP_PLUGIN_PATH . 'includes/tracking.php';
 
 // Include post types
 include ( PTP_PLUGIN_PATH . 'includes/post-types.php');
@@ -94,4 +98,5 @@ function dh_ptp_localization()
   load_plugin_textdomain( PTP_LOC, FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action('init', 'dh_ptp_localization');
+
 ?>
