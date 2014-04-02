@@ -34,7 +34,7 @@ function dh_ptp_register_pricing_table_post_type() {
 	    'capability_type' => 'post',
 	    'has_archive' => false, 
 	    'hierarchical' => false,
-	    'menu_position' => 81,
+	    'menu_position' => 104,
 	    'supports' => array( 'title', 'revisions')
   	); 
 
@@ -157,11 +157,26 @@ add_filter( 'the_content', 'dh_ptp_live_preview');
  * Remove the publish metabox for pricing tables
  * @return [type] [description]
  */
-function dh_ptp_remove_publish_metabox()
+
+//function dh_ptp_remove_publish_metabox()
+//{
+//    remove_meta_box( 'submitdiv', 'easy-pricing-table', 'side' );
+//}
+//add_action( 'admin_menu', 'dh_ptp_remove_publish_metabox' );
+
+function dh_ptp_admin_footer_js()
 {
-    remove_meta_box( 'submitdiv', 'easy-pricing-table', 'side' );
+	global $post;
+	
+	if ($post->post_type == 'easy-pricing-table') :
+		?>
+			<script type="text/javascript">
+				jQuery('#submitdiv').hide();
+			</script>
+		<?php
+	endif;
 }
-add_action( 'admin_menu', 'dh_ptp_remove_publish_metabox' );
+add_action('admin_footer', 'dh_ptp_admin_footer_js');
 
 /* Save tab state */
 function dh_ptp_save_tab_state( $post_id ) {
@@ -194,9 +209,42 @@ function dh_ptp_save_preview_redirect ($location)
 		$post->ID == $match[1] && (isset($_POST['publish']) || $post->post_status == 'publish') && $pl = get_permalink($post->ID)
 		&& isset($_POST['dh_ptp_preview_url'])
     ) {
+		// Flush rewrite rules
+		global $wp_rewrite;
+		$wp_rewrite->flush_rules(true);
+		
         // Always redirect to the post
         $location = $_POST['dh_ptp_preview_url'];
     }
  
     return $location;
 }
+
+/**
+ * Enqueue jquery-ui-accordion in wp-admin
+ */
+function dh_ptp_jquery_ui_accordion()
+{
+	if (is_admin()) {
+		wp_enqueue_script('jquery-ui-accordion');
+		wp_enqueue_style('dh-ptp-jquery-ui', plugins_url('assets/ui/ui-accordion.css', dirname(__FILE__)));
+	}
+}
+add_action('admin_enqueue_scripts', 'dh_ptp_jquery_ui_accordion' );
+
+/**
+ * Print accordion related JS
+ */
+function dh_ptp_print_jquery_ui_accordion_js()
+{
+	?>
+	<script type="text/javascript">
+		//<![CDATA[
+			jQuery(document).ready(function(){
+				jQuery( ".dh_ptp_accordion" ).accordion({heightStyle: 'content'});
+			});
+		//]]>
+	</script>
+	<?php
+}
+add_action('admin_print_footer_scripts', 'dh_ptp_print_jquery_ui_accordion_js' );
