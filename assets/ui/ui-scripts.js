@@ -188,7 +188,7 @@ function setAdvancedDesignSettingsVisibility(el)
 {
 	// required for wordpress
 	var $ = jQuery;
-        //set settings visibility 
+
 	if ($(el).attr('id') == "simple-flat-selector")
 	{
 		$('#simple-flat-advanced-design-settings').show();
