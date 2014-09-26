@@ -338,10 +338,27 @@ Popover help text tooltip styling
   margin-bottom: 0px;
 }
 
+#dh_ptp_tabs_container #dh_ptp_metabox_tabs li {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    background: #e4e4e4;
+    color: #555;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    display: inline-block;
+    padding: 4px 14px 6px;
+    text-decoration: none;
+    margin: -4px 4px 0px 0;
+    float: left;
+    padding: 5px;
+}
+
 #dh_ptp_design_tabs a,
 #dh_ptp_metabox_tabs a{
   text-decoration: none;
   outline:0;
+  color:#333;
 }
 
 #dh_ptp_design_tabs .ui-tabs-active a,
@@ -561,4 +578,27 @@ color:#333;
 
 .custom-css-setting-textbox {
     opacity: 0.7;
+}
+
+.tt-banner-headline {
+    font-size: 17px;
+}
+.tt-centered{
+    text-align: center;
+}
+[id='1_dh_ptp_settings_metabox'] > h3, #dh_ptp_banner_review_box_metabox h3, #dh_ptp_banner_metabox h3 , #dh_ptp_banner_quick_link_metabox h3 {
+    color: #fff;
+    background-color: #333;
+}
+
+#dh_ptp_banner_review_box_metabox .button-large, #dh_ptp_banner_metabox .button-large , #dh_ptp_banner_quick_link_metabox .button-large {
+    font-size: 17px;
+    line-height: 30px;
+    height: 32px;
+}
+
+#dh_ptp_tabs_container #dh_ptp_metabox_tabs .ui-tabs-active, #dh_ptp_tabs_container #dh_ptp_metabox_tabs .dh_ptp_tab_header:hover {
+    border-bottom: 1px solid #f1f1f1;
+    background: #f1f1f1;
+    color: #000;
 }

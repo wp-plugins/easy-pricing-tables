@@ -36,14 +36,7 @@
                         </select>
                     </td>
                 </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="design1-hover-effects-demo"><?php _e('Enlarge Column on Hover', PTP_LOC); ?></label></td>
-                    <td><input type="checkbox" name="design1-hover-effects-demo" id="design1-hover-effects-demo" value="1"/></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="design1-shake-buttons-on-hover-demo"><?php _e('Shake Button on Hover', PTP_LOC); ?></label></td>
-                    <td><input type="checkbox" name="design1-shake-buttons-on-hover-demo" id="design1-shake-buttons-on-hover-demo" value="1"/></td>
-                </tr>
+                
                 
                    <!--  Automatically match Row Height  -->
                   <tr>
@@ -203,52 +196,12 @@
                 </tr>
             </table>
         </div>
-        <h3><?php _e("Unfeatured Columns Colors", PTP_LOC); ?></h3>
+        
+        <h3><?php _e("Button Colors", PTP_LOC); ?></h3>
         <div>
             <table>
-                <tr class="table-headline">
-                    <td><?php _e('Background Colors', PTP_LOC); ?></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="unfeatured-border-color-demo"><?php _e('Border Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #dddddd;"></a></div></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="title-area-background-color-demo"><?php _e('Title Background Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #dddddd;"></a></div></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="pricing-background-color-demo"><?php _e('Pricing Background Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #eeeeee;"></a></div></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="unfeatured-button-area-background-color-demo"><?php _e('Button Area Background Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #eeeeee;"></a></div></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="featured-background-color-demo"><?php _e('Bullet Item Background Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #ffffff;"></a></div></td>
-                </tr>
-                
-                <!-- Headline -->
-                <tr class="table-headline">
-                    <td><br/><?php _e('Font Colors', PTP_LOC); ?></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="title-area-font-color-demo"><?php _e('Title Font Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #333333;"></a></div></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="pricing-area-font-color-demo"><?php _e('Pricing Font Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #333333;"></a></div></td>
-                </tr>
-                <tr class="ept-demo">
-                    <td class="settings-title"><label for="featured-font-color-demo"><?php _e('Feature Color', PTP_LOC); ?></label></td>
-                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #333333;"></a></div></td>
-                </tr>
-                
-                <!-- Headline -->
-                <tr class="table-headline"><td><br/><?php _e('Button Color', PTP_LOC); ?></td></tr>
+               <!-- Headline -->
+                <tr class="table-headline"><td><br/><?php _e('Button Color (Unfeatured Columns)', PTP_LOC); ?></td></tr>
                 <tr>
                     <td class="settings-title"><?php _e('Button Color', PTP_LOC); ?></td>
                     <?php $mb->the_field('button-color'); ?>
@@ -273,14 +226,85 @@
                     <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#ffffff'; ?>
                     <td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#ffffff" /></td>
                 </tr>
+                
+                <!-- Headline -->
+                <tr class="table-headline"><td><br/><?php _e('Button Color (Featured Column)', PTP_LOC); ?></td></tr>
+                <tr>
+                    <td class="settings-title"><?php _e('Featured-Button Color', PTP_LOC); ?></td>
+                    <?php $mb->the_field('featured-button-color'); ?>
+                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#e74c3c'; ?>
+                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php echo $value; ?>" class="my-color-field form-control" data-default-color="#e74c3c" /></td>
+                </tr>
+                <tr>
+                    <td class="settings-title"><?php _e('Featured-Button Border Color', PTP_LOC); ?></td>
+                    <?php $mb->the_field('featured-button-border-color'); ?>
+                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#c0392b'; ?>
+                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#c0392b" /></td>
+                </tr>
+                <tr>
+                    <td class="settings-title"><?php _e('Featured-Button Hover Color', PTP_LOC); ?></td>
+                    <?php $mb->the_field('featured-button-hover-color'); ?>
+                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#c0392b'; ?>
+                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#c0392b" /></td>
+                </tr>
+                <tr>
+                    <td class="settings-title"><?php _e('Featured-Button Font Color', PTP_LOC); ?></td>
+                    <?php $mb->the_field('featured-button-font-color'); ?>
+                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#ffffff'; ?>
+                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#ffffff" /></td>
+                </tr>
+                
             </table>
         </div>
-        <h3><?php _e("Featured Columns Colors", PTP_LOC); ?></h3>
+        
+        
+        <h3><?php _e("Font & Background Colors (Premium Only)", PTP_LOC); ?></h3>
         <div>
             <table>
+                <tr class="table-headline">
+                    <td><?php _e('Background Colors (Unfeatured Columns)', PTP_LOC); ?></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="unfeatured-border-color-demo"><?php _e('Border Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #dddddd;"></a></div></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="title-area-background-color-demo"><?php _e('Title Background Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #dddddd;"></a></div></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="pricing-background-color-demo"><?php _e('Pricing Background Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #eeeeee;"></a></div></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="unfeatured-button-area-background-color-demo"><?php _e('Button Area Background Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #eeeeee;"></a></div></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="featured-background-color-demo"><?php _e('Bullet Item Background Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #ffffff;"></a></div></td>
+                </tr>
+                
                 <!-- Headline -->
                 <tr class="table-headline">
-                    <td><?php _e('Background Colors', PTP_LOC); ?></td>
+                    <td><br/><?php _e('Font Colors (Unfeatured Columns)', PTP_LOC); ?></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="title-area-font-color-demo"><?php _e('Title Font Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #333333;"></a></div></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="pricing-area-font-color-demo"><?php _e('Pricing Font Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #333333;"></a></div></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="featured-font-color-demo"><?php _e('Feature Color', PTP_LOC); ?></label></td>
+                    <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #333333;"></a></div></td>
+                </tr>
+                
+                 <!-- Headline -->
+                <tr class="table-headline">
+                    <td><?php _e('Background Colors (Featured Columns)', PTP_LOC); ?></td>
                 </tr>
                 <tr class="ept-demo">
                     <td class="settings-title"><label for="featured-border-color-demo"><?php _e('Border Color', PTP_LOC); ?></label></td>
@@ -313,7 +337,7 @@
                 
                 <!-- Headline -->
                 <tr class="table-headline">
-                    <td><br/><?php _e('Font Colors', PTP_LOC); ?></td>
+                    <td><br/><?php _e('Font Colors (Featured Columns)', PTP_LOC); ?></td>
                 </tr>
                 <tr class="ept-demo">
                     <td class="settings-title"><label for="featured-title-area-font-color-demo"><?php _e('Title Font Color', PTP_LOC); ?></label></td>
@@ -332,35 +356,10 @@
                     <td><div class="wp-picker-container"><a tabindex="0" class="wp-color-result" title="Select Color" data-current="Current Color" style="background-color: #ffffff;"></a></div></td>
                 </tr>
                 
-                <!-- Headline -->
-                <tr class="table-headline"><td><br/><?php _e('Button Color (Featured Column)', PTP_LOC); ?></td></tr>
-                <tr>
-                    <td class="settings-title"><?php _e('Featured-Button Color', PTP_LOC); ?></td>
-                    <?php $mb->the_field('featured-button-color'); ?>
-                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#e74c3c'; ?>
-                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="button-color" value="<?php echo $value; ?>" class="my-color-field form-control" data-default-color="#e74c3c" /></td>
-                </tr>
-                <tr>
-                    <td class="settings-title"><?php _e('Featured-Button Border Color', PTP_LOC); ?></td>
-                    <?php $mb->the_field('featured-button-border-color'); ?>
-                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#c0392b'; ?>
-                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#c0392b" /></td>
-                </tr>
-                <tr>
-                    <td class="settings-title"><?php _e('Featured-Button Hover Color', PTP_LOC); ?></td>
-                    <?php $mb->the_field('featured-button-hover-color'); ?>
-                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#c0392b'; ?>
-                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="button-border-color" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#c0392b" /></td>
-                </tr>
-                <tr>
-                    <td class="settings-title"><?php _e('Featured-Button Font Color', PTP_LOC); ?></td>
-                    <?php $mb->the_field('featured-button-font-color'); ?>
-                    <?php $value = (!is_null($mb->get_the_value()))?$mb->get_the_value():'#ffffff'; ?>
-                    <td><input type="text" name="<?php $mb->the_name(); ?>" class="colorpicker-no-palettes" value="<?php echo $value; ?>" class="my-color-field" data-default-color="#ffffff" /></td>
-                </tr>
             </table>
         </div>
-        <h3><?php _e("Advanced Settings", PTP_LOC); ?></h3>
+
+        <h3><?php _e("Advanced Settings (Premium Only)", PTP_LOC); ?></h3>
         <div>
             <table>
                 <tr class="ept-demo">
@@ -379,10 +378,18 @@
                     <td class="settings-title"><label for="design1-no-spacing-betwen-columns-demo"><?php _e('No Spacing Between Columns', PTP_LOC); ?></label></td>
                     <td><input type="checkbox" name="design1-no-spacing-betwen-columns-demo" id="design1-no-spacing-betwen-columns-demo" value="1"/></td>
                 </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="design1-hover-effects-demo"><?php _e('Enlarge Column on Hover', PTP_LOC); ?></label></td>
+                    <td><input type="checkbox" name="design1-hover-effects-demo" id="design1-hover-effects-demo" value="1"/></td>
+                </tr>
+                <tr class="ept-demo">
+                    <td class="settings-title"><label for="design1-shake-buttons-on-hover-demo"><?php _e('Shake Button on Hover', PTP_LOC); ?></label></td>
+                    <td><input type="checkbox" name="design1-shake-buttons-on-hover-demo" id="design1-shake-buttons-on-hover-demo" value="1"/></td>
+                </tr>
             </table>
         </div>
                <!-- ept-custom-css-setting -->
-        <h3><?php _e('Custom Css', PTP_LOC); ?></h3>
+        <h3><?php _e('Custom CSS (Premium Only)', PTP_LOC); ?></h3>
         <div >
  
             <table>
