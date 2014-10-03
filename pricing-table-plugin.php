@@ -4,12 +4,12 @@
 	Plugin URI: http://fatcatapps.com/easypricingtables
 	Description: Create a Beautiful, Responsive and Highly Converting Pricing or Comparison Table in Less Than 5 Minutes with Easy Pricing Tables for WordPress. No Coding Required.
 	Author: David Hehenberger
-	Version: 1.6.1.1
+	Version: 1.7
 	Author URI: http://fatcatapps.com
 */
 
 // define plugin version for update nag
-define('PTP_PLUGIN_VERSION', '1.6.1.1');
+define('PTP_PLUGIN_VERSION', '1.7');
 
 // Define a constant to always include the absolute path
 define('PTP_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
@@ -84,7 +84,10 @@ function dh_ptp_plugin_footer_enqueu($hook_suffix)
   global $post;
   
   if ($post && $post->post_type == 'easy-pricing-table') {
-	add_filter('admin_footer_text', 'dh_ptp_plugin_footer');
+      wp_enqueue_script( 'codemirror', PTP_PLUGIN_PATH_FOR_SUBDIRS.'/assets/ui/ui-components/codemirror/codemirror.js' );
+      wp_enqueue_script( 'css', PTP_PLUGIN_PATH_FOR_SUBDIRS.'/assets/ui/ui-components/codemirror/addon-codemirror/css.js' );
+      wp_enqueue_style( 'codemirror-style', PTP_PLUGIN_PATH_FOR_SUBDIRS . '/assets/ui/ui-components/codemirror/codemirror.css' );
+      add_filter('admin_footer_text', 'dh_ptp_plugin_footer');
   }
 }
 add_action('admin_enqueue_scripts', 'dh_ptp_plugin_footer_enqueu');
