@@ -128,19 +128,19 @@ We're using a small jQuery library called (jquery.matchHeight.js)[https://github
 
 == Changelog ==
 
-= 2.0 =
+= Easy Pricing Tables 2.0 =
 * Updated version to 2.0 to correspond with Easy Pricing Tables Premium
 * Updated copy of Easy Pricing Tables Premium banner
 * Updated anonymous tracking script
 * Fixed error that occured when activating Easy Pricing Tables Premium when Easy Pricing Tables Lite was installed.
 
-= 1.9.5.4 =
+= Easy Pricing Tables 1.9.5.4 =
 * Updated readme.txt
 
-= 1.9.5.3 =
+= Easy Pricing Tables 1.9.5.3 =
 * Confirmed compatibility with WordPress 4.0.1
 
-= 1.9.5 =
+= Easy Pricing Tables 1.9.5 =
 * Improvement: Empty rows will now automatically be hidden on smartphones
 * Improvement: Changed mouse cursor from arrow to hand on button hover
 * Improvement: Changed aesthetics (CSS) of the tabs in the Easy Pricing Tables editor
@@ -148,61 +148,62 @@ We're using a small jQuery library called (jquery.matchHeight.js)[https://github
 * Changed version number of Easy Pricing Tables to correspond to Easy Pricing Tables Premium
 * Added Easy Pricing Tables - icon to media button
 
-= 1.7.1 =
+= Easy Pricing Tables 1.7.1 =
 * Fixed CSS bug related to the "rounded pricing table corners" - feature
 * Fixed a rare bug by adding jquey lib dependency after matchHeight lib
 * Minor CSS change in the UI
 * Add unique ID element to every call to action button
 
-= 1.7 =
-* Add Custom Pricing Table CSS Feature
+= Easy Pricing Tables 1.7 =
+* Add Custom CSS Feature
 
-= 1.6.1.1 =
-* Tiny CSS fix (Easy Pricing Tables user interface)
+= Easy Pricing Tables 1.6.1.1 =
+* Tiny CSS fix (user interface)
 
-= 1.6.1 =
+= Easy Pricing Tables 1.6.1 =
 * Small user interface improvements
 
 
-= 1.6.0.3 =
-* Confirmed Easy Pricing Tables compatibility with WordPress 4.0
+= Easy Pricing Tables 1.6.0.3 =
+* Confirmed compatibility with WordPress 4.0
 
 
-= 1.6.0.2 =
-* Confirmed Easy Pricing Tables compatibility with WordPress 3.9.2
+= Easy Pricing Tables 1.6.0.2 =
+* Confirmed compatibility with WordPress 3.9.2
+* Updated to Drip API v2.0
 
 
-= 1.6.0.1 =
-* Fixed a minor issue that occured while deploying Easy Pricing Tables v1.6 that caused 'Automatically match Row Height' to not work.
+= Easy Pricing Tables 1.6.0.1 =
+* Fixed a minor issue that occured while deploying v1.6 that caused 'Automatically match Row Height' to not work.
 
 
-= 1.6 =
-* Automatically match Pricing Table Row Height - feature. For all newly created tables, all rows will now be forced to be of the same height using JS (you can activate/deactivate this in Design -> General Settings -> Automatically match Row Height)
+= Easy Pricing Tables 1.6 =
+* Automatically match Row Height - feature. For all newly created tables, all rows will now be forced to be of the same height using JS (you can activate/deactivate this in Design -> General Settings -> Automatically match Row Height)
 
 
-= 1.5.5 =
-* Fixed a JS bug in the Easy Pricing Tables backend (jquery-ui loaded in non easy-pricing-tables post-types)
+= Easy Pricing Tables 1.5.5 =
+* Fixed a JS bug (jquery-ui loaded in non easy-pricing-tables post-types)
 
 
-= 1.5.4 =
+= Easy Pricing Tables 1.5.4 =
 * Improved the plugins' compatibility with shortcode-button generators
 * Fixed a JS error in the Easy Pricing Tables editor
 * Added the ability to use only one column
 * Added 'template'-Tab
 
 
-= 1.5.3 =
-* Fixed a bug that added unnecessary pricing table CSS to some pages
+= Easy Pricing Tables 1.5.3 =
+* Fixed a bug that added unnecessary CSS to some pages
 * Confirmed compatibility with WordPress 3.9.1
 
-= 1.5.2.1 =
-* Updated links to new Easy Pricing Tables landing page - https://fatcatapps.com/easypricingtables
+= Easy Pricing Tables 1.5.2.1 =
+* Updated links from http://easypricingtables.com to http://fatcatapps.com/
 
-= 1.5.2 =
-* Confirmed compatibility of Easy Pricing Tables with WordPress 3.9
+= Easy Pricing Tables 1.5.2 =
+* Confirmed compatibility with WordPress 3.9
 * Changed Easy Pricing Tables icon
 
-= 1.5.1 =
+= Easy Pricing Tables 1.5.1 =
 * Bugfix: Unable to resize bullet font
 * Bugfix: Preview didn't work for about 1% of sites
 * Bugfix: "Pricing Table" menu disappears
@@ -210,50 +211,50 @@ We're using a small jQuery library called (jquery.matchHeight.js)[https://github
 * Changes to email opt-in system
 * Added Easy Pricing Tables Premium - preview
 
-= 1.5.0.2 =
+= Easy Pricing Tables 1.5.0.2 =
 * Fixed incompatibility with netstudio-wp theme
 * Added YouTube video link to readme.txt
 
-= 1.5 =
+= Easy Pricing Tables 1.5 =
 * Easy Pricing Tables now supports translations (contact me if you'd like to submit a translation).
 * Added Lithuanian language support. 
 * Improved compatibility with legacy browsers (in particular old Internet Exploreer versions).
 * Easy Pricing Tables is now compatible with http://wordpress.org/plugins/responsive-mobile-friendly-tooltip/.
 * Small UI improvement: moved the "Pricing Tables" setting link in the left-hand navigation further down.
 
-= 1.4.4 =
-* Pricing Table editor UI improvements
+= Easy Pricing Tables 1.4.4 =
+* UI improvements
 * Added support for shortcode buttons like S2 member
 * Fixed incompatibility with the Theme Foundry Basis theme
 * Decreased file size of Easy Pricing Tables plugin
 * Fixed CSS incompatibility with some themes
 * Added an update notice
 
-= 1.4.3 =
-* Added the ability to clone existing pricing tables
+= Easy Pricing Tables 1.4.3 =
+* Added the ability to clone existing tables
 * Added row IDs to pricing table HTML (now you can change alternate row colors using CSS)
 * Bugfixes
 * Fixed CSS conflicts with some themes
 * Minor UX improvements
 
 
-= 1.4.2.2 =
+= Easy Pricing Tables 1.4.2.2 =
 * Fixed versioning issue
 
-= 1.4.2.1 =
-* Updated readme.txt (FAQ, pricing table screenshots, markdown formatting issues)
+= Easy Pricing Tables 1.4.2.1 =
+* Updated readme.txt (FAQ, screenshots, markdown formatting issues)
 
-= 1.4.2 =
+= Easy Pricing Tables 1.4.2 =
 * Updated readme.txt
 * Added sidebar link to Easy Pricing Tables Premium
 * Fixed CSS conflict with Dynamik Genesis Child Theme
 * Added ability to rename "Most Popular" Featured Label
 
-= 1.4.1 =
-* Fixed pricing tables button-color bug introduced with version 1.4
+= Easy Pricing Tables 1.4.1 =
+* Fixed button-color bug introduced with version 1.4
 
-= 1.4 =
-* Bufix: Fixed Easy Pricing Tables CSS generation algorithm
+= Easy Pricing Tables 1.4 =
+* Bufix: Fixed CSS generation algorithm
 * Fixed PHP 5.4 strict notices
 * Improved compatibility with other plugins using the WPAlchemy framework
 * UI improvements: Shortcodes can now be directly added via the editor
@@ -261,60 +262,60 @@ We're using a small jQuery library called (jquery.matchHeight.js)[https://github
 * After install, ask users if they want to get a pricing-table mini-course
 * Users can now change the text in the "most popular" label
 
-= 1.3.2 =
-* Improved CSS to cause less Easy Pricing Tables / theme conflicts
+= Easy Pricing Tables 1.3.2 =
+* Improved CSS to cause less theme conflicts
 * Various bugfixes
 * Refactored pricing table generation code
 * UI improvements
 
-= 1.3.1 =
+= Easy Pricing Tables 1.3.1 =
 * Minor Improvements
 
-= 1.3 =
+= Easy Pricing Tables 1.3 =
 * Fixed incompatibility with s2 Member plugin
 * Added font-size options
 * Changed Easy Pricing Tables post-type 'public' => false
 * Minor bugfixes
 * Minor UI improvements
 
-= 1.2.1 =
+= Easy Pricing Tables 1.2.1 =
 * Bugfix
 
-= 1.2 =
-* Added column drag & drop to pricing tables editor
+= Easy Pricing Tables 1.2 =
+* Added column drag & drop
 * UI improvements
 * Bugfixes
 * Fixed CSS issues on the "Add new pricing tables"-page caused by WooThemes
 
-= 1.1.2 =
+= Easy Pricing Tables 1.1.2 =
 * Fixed bug related to colorpicker introduced with version 1.1.0
 
-= 1.1.1 =
+= Easy Pricing Tables 1.1.1 =
 * Fixed Woothems incompatibility
 
-= 1.1.0 =
-* Added new pricing tables design options (colors & rounded corners)
-* Added tabs to backend Easy Pricing Tables UI
+= Easy Pricing Tables 1.1.0 =
+* Added new design options (colors & rounded corners)
+* Added tabs to backend UI
 * Replaced default-text with HTML5 placeholder
 * Various bugfixes
 * Added new screenshots
 * Added banner for Wordpress directory
 
-= 1.0.2.1 =
+= Easy Pricing Tables 1.0.2.1 =
 * Minor CSS Bugfix
 
-= 1.0.2 =
+= Easy Pricing Tables 1.0.2 =
 * Fixed typos
 * Improved responsive CSS
 * Improved button design
 * Changed design of highlighted column
 * Bugfixes
 
-= 1.0.1 =
-* Improved readme.txt of Easy Pricing Tables
+= Easy Pricing Tables 1.0.1 =
+* Improved readme.txt
 
-= 1.0.0 =
-* Initial release of Easy Pricing Tables
+= Easy Pricing Tables 1.0.0 =
+* Initial release
 
 
 == Upgrade Notice ==
