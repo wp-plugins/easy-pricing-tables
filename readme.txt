@@ -19,19 +19,6 @@ Create a Beautiful, Responsive and Highly Converting Pricing Table in Less Than 
 
 *   [View Easy Pricing Tables Premium Live Demo &raquo;](https://fatcatapps.com/easypricingtables/demo?utm_campaign=description%2Bdemo%2Blink&utm_source=https%3A%2F%2Fwordpress.org%2Fplugins%2Feasy-pricing-tables%2F&utm_medium=referral)
 
-> #### Easy Pricing Tables Premium
-> Easy Pricing Tables Premium comes with the following features.<br />
->
-> Ten Gorgeous Pricing Table Designs.<br />
-> Fully Customize your Pricing Table (Colors, etc...).<br />
-> Priority Email Support.<br />
-> Tooltips.<br />
-> Google Analytics Integration (track pricing table button clicks).<br />
-> Pricing Toggles (switch between multiple pricing tables - eg. currencies or monthly/yearly pricing.<br />
-> And much more....<br />
->
-> [Learn more about Easy Pricing Tables Premium >>](https://fatcatapps.com/easypricingtables/?utm_campaign=description%2Bcta&utm_source=https%3A%2F%2Fwordpress.org%2Fplugins%2Feasy-pricing-tables%2F&utm_medium=referral)
-
 = Overview =
 
 *   Easy Pricing Tables implements conversion rate optimization (CRO) best practices and guides you through the process of creating a pricing table that converts.
@@ -53,6 +40,20 @@ Create a Beautiful, Responsive and Highly Converting Pricing Table in Less Than 
 
 
 *   [Check out Easy Pricing Tables Premium](https://fatcatapps.com/easypricingtables/?utm_campaign=ept-description-cta&utm_source=wordpress.org%2Fplugins&utm_medium=referral)
+
+> #### Easy Pricing Tables Premium
+> Easy Pricing Tables Premium comes with the following features.<br />
+>
+> Ten Gorgeous Pricing Table Designs.<br />
+> Fully Customize your Pricing Table (Colors, etc...).<br />
+> Priority Email Support.<br />
+> Tooltips.<br />
+> Google Analytics Integration (track pricing table button clicks).<br />
+> Pricing Toggles (switch between multiple pricing tables - eg. currencies or monthly/yearly pricing.<br />
+> And much more....<br />
+>
+> [Learn more about Easy Pricing Tables Premium >>](https://fatcatapps.com/easypricingtables/?utm_campaign=description%2Bcta&utm_source=https%3A%2F%2Fwordpress.org%2Fplugins%2Feasy-pricing-tables%2F&utm_medium=referral)
+
 
 = WordPress.org Support =
 
