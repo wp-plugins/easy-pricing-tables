@@ -3,20 +3,21 @@
 	Plugin Name: Easy Pricing Tables Lite by Fatcat Apps
 	Plugin URI: https://fatcatapps.com/easypricingtables
 	Description: Create a Beautiful, Responsive and Highly Converting Pricing or Comparison Table in Less Than 5 Minutes with Easy Pricing Tables for WordPress. No Coding Required.
+	Text Domain: easy-pricing-tables
+	Domain Path: /languages
 	Author: David Hehenberger
-	Version: 2.0.4
+	Version: 2.0.5
 	Author URI: https://fatcatapps.com
 */
 
 if( ! defined( 'PTP_PLUGIN_PATH' ) ) {
 
   // define plugin version for update nag
-  define('PTP_PLUGIN_VERSION', '2.0.3');
+  define('PTP_PLUGIN_VERSION', '2.0.5');
 
   // Define a constant to always include the absolute path
   define('PTP_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
   define('PTP_PLUGIN_PATH_FOR_SUBDIRS', plugins_url(str_replace(dirname(dirname(__FILE__)), '', dirname(__FILE__))));
-  define('PTP_LOC', 'easy-pricing-tables');
 
   // Analytics
   include_once PTP_PLUGIN_PATH . 'includes/analytics.php';
@@ -59,9 +60,9 @@ if( ! defined( 'PTP_PLUGIN_PATH' ) ) {
     unset($links['edit']);
     
     // Add Easy Pricing Tables links
-    $add_new_link = '<a href="post-new.php?post_type=easy-pricing-table">' . __('Add New', PTP_LOC) . '</a>'; 
-    $forum_link   = '<a href="http://wordpress.org/support/plugin/easy-pricing-tables">' . __('Support', PTP_LOC) . '</a>';
-    $premium_link = '<a href="https://fatcatapps.com/easypricingtables/?utm_campaign=Purchase%2BPremium%2Bin%2Bplugins.php&utm_source=Easy%2BPricing%2BTables%2BFree&utm_medium=plugin&utm_content=v1">' . __('Purchase Premium', PTP_LOC) . '</a>';
+    $add_new_link = '<a href="post-new.php?post_type=easy-pricing-table">' . __('Add New', 'easy-pricing-tables') . '</a>'; 
+    $forum_link   = '<a href="http://wordpress.org/support/plugin/easy-pricing-tables">' . __('Support', 'easy-pricing-tables' ) . '</a>';
+    $premium_link = '<a href="https://fatcatapps.com/easypricingtables/?utm_campaign=Purchase%2BPremium%2Bin%2Bplugins.php&utm_source=Easy%2BPricing%2BTables%2BFree&utm_medium=plugin&utm_content=v1">' . __('Purchase Premium',  'easy-pricing-tables' ) . '</a>';
     
     array_push($links, $add_new_link);
     array_push($links, $forum_link);
@@ -77,8 +78,8 @@ if( ! defined( 'PTP_PLUGIN_PATH' ) ) {
   function dh_ptp_plugin_footer ($text) {
     echo
   	$text . ' '.
-  	sprintf( __('Thank you for using <a href="%s" target="_blank">Easy Pricing Tables</a>.', PTP_LOC), 'http://easypricingtables.com/?utm_source=free-plugin&utm_medium=link&utm_campaign=thank-you-for-using-easy-pricing-tables' ) . ' ' .
-  	sprintf( __('Please <a href="%s">rate us on WordPress.org</a>.', PTP_LOC), 'http://wordpress.org/support/view/plugin-reviews/easy-pricing-tables?filter=5#postform');
+  	sprintf( __('Thank you for using <a href="%s" target="_blank">Easy Pricing Tables</a>.',  'easy-pricing-tables' ), 'http://easypricingtables.com/?utm_source=free-plugin&utm_medium=link&utm_campaign=thank-you-for-using-easy-pricing-tables' ) . ' ' .
+  	sprintf( __('Please <a href="%s">rate us on WordPress.org</a>.',  'easy-pricing-tables' ), 'http://wordpress.org/support/view/plugin-reviews/easy-pricing-tables?filter=5#postform');
   }
 
   function dh_ptp_plugin_footer_enqueu($hook_suffix)
@@ -95,12 +96,15 @@ if( ! defined( 'PTP_PLUGIN_PATH' ) ) {
   add_action('admin_enqueue_scripts', 'dh_ptp_plugin_footer_enqueu');
 
   /* Localization */
-  function dh_ptp_localization()
+  function fca_eoi_load_localization_easy_pricing_tables()
   {
-    $locale = apply_filters( 'plugin_locale', get_locale(), PTP_LOC );
+	
+    $locale = apply_filters( 'plugin_locale', get_locale(), 'easy-pricing-tables' );
     
-    load_textdomain( PTP_LOC, trailingslashit( WP_LANG_DIR ) . PTP_LOC . '/' . PTP_LOC . '-' . $locale . '.mo' );
-    load_plugin_textdomain( PTP_LOC, FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+    load_textdomain( 'easy-pricing-tables', trailingslashit( WP_LANG_DIR ) . 'easy-pricing-tables' . '/' . 'easy-pricing-tables' . '-' . $locale . '.mo' );
+  
+	load_plugin_textdomain( 'easy-pricing-tables', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
   }
-  add_action('init', 'dh_ptp_localization');
+  add_action( 'plugins_loaded', 'fca_eoi_load_localization_easy_pricing_tables' );
+
 }
